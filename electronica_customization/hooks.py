@@ -10,6 +10,16 @@ app_license = "mit"
 
 # required_apps = []
 
+# fixtures = [
+#     {
+#         "doctype": "Translation",
+#         "or_filters": [
+#             ["Translation", "source_text", "=", "Warranty Claim"],
+#             ["Translation", "source_text", "=", "Maintenance Visit"],
+#         ],
+#     }
+# ]
+
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
 # 	{
