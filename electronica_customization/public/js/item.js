@@ -5,6 +5,12 @@ frappe.ui.form.on("Item", {
     custom_series: (frm) => {
         handleSeriesUpdate(frm);
     },
+    custom_list_price: (frm) => {
+        const custom_list_price = frm.doc.custom_list_price ?? 0;
+        
+        // Unit Price is 15% more than List Price
+        frm.set_value("custom_unit_price", custom_list_price.toFixed(2) * 1.15);
+    }
 });
 
 
