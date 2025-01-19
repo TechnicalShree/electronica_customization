@@ -53,7 +53,10 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Item": "public/js/item.js"}
+doctype_js = {
+    "Item": "public/js/item.js",
+    "Warranty Claim": "public/js/warrenty_claim.js",
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -138,9 +141,9 @@ doctype_js = {"Item": "public/js/item.js"}
 # DocType Class
 # ---------------
 # Override standard doctype classes
-
 # override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
+#     # "ToDo": "custom_app.overrides.CustomToDo"
+#     "Warranty Claim": "electronica_customization.electronica_customization.overrides.warranty_claim.CustomWarrantyClaim",
 # }
 
 # Document Events

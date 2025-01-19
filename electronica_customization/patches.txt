@@ -6,3 +6,4 @@
 # Patches added in this section will be executed after doctypes are migrated
 
 electronica_customization.patches.translation # 15/01/2025 15:30
+electronica_customization.patches.description_of_issue # 19/01/2025 14:30
