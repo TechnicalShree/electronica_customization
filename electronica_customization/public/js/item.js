@@ -1,4 +1,22 @@
 frappe.ui.form.on("Item", {
+    setup: (frm) => {
+        frm.fields_dict.custom_series.get_query = function (doc) {
+            return {
+                filters: [
+                    ['main_selection', '=', frm.doc?.custom_main_selection || ""]
+                ]
+            };
+        };
+
+        frm.fields_dict.custom_model.get_query = function (doc) {
+            return {
+                filters: [
+                    ['main_selection', '=', frm.doc?.custom_main_selection || ""],
+                    ['series', '=', frm.doc?.custom_series || ""]
+                ]
+            };
+        };
+    },
     custom_main_selection: (frm) => {
         handleMainSelectionUpdate(frm);
     },
