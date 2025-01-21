@@ -20,6 +20,16 @@ def get_primary_address(customer):
     ]
     primary_billing_address = frappe.get_value("Address", billing_filters, "name")
 
+    frappe.logger("debug").error(
+        [
+            "-------------------",
+            shipping_filters,
+            primary_shipping_address,
+            billing_filters,
+            primary_billing_address,
+        ]
+    )
+
     return {
         "primary_shipping_address": primary_shipping_address,
         "primary_billing_address": primary_billing_address,
