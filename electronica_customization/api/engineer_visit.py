@@ -10,6 +10,9 @@ def get_primary_address(customer):
         ["address_type", "=", "Shipping"],
         ["is_shipping_address", "=", "1"],
     ]
+    if not frappe.db.exists("Address", shipping_filters):
+        del shipping_filters[-1]
+
     primary_shipping_address = frappe.get_value("Address", shipping_filters, "name")
 
     billing_filters = [
@@ -18,17 +21,11 @@ def get_primary_address(customer):
         ["address_type", "=", "Billing"],
         ["is_primary_address", "=", "1"],
     ]
-    primary_billing_address = frappe.get_value("Address", billing_filters, "name")
 
-    frappe.logger("debug").error(
-        [
-            "-------------------",
-            shipping_filters,
-            primary_shipping_address,
-            billing_filters,
-            primary_billing_address,
-        ]
-    )
+    if not frappe.db.exists("Address", billing_filters):
+        del billing_filters[-1]
+
+    primary_billing_address = frappe.get_value("Address", billing_filters, "name")
 
     return {
         "primary_shipping_address": primary_shipping_address,
