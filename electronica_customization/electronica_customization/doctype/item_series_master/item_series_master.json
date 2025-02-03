@@ -23,13 +23,13 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Main Selection",
-   "options": "Item Main Selection Master",
+   "options": "Product Family Master",
    "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-14 00:32:17.105209",
+ "modified": "2025-02-03 19:53:47.954483",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Item Series Master",

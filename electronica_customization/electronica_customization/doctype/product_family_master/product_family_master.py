@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class ItemMainSelectionMaster(Document):
+class ProductFamilyMaster(Document):
 	pass

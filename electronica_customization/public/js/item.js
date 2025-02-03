@@ -3,7 +3,7 @@ frappe.ui.form.on("Item", {
         frm.fields_dict.custom_series.get_query = function (doc) {
             return {
                 filters: [
-                    ['main_selection', '=', frm.doc?.custom_main_selection || ""]
+                    ['main_selection', '=', frm.doc?.custom_product_family || ""]
                 ]
             };
         };
@@ -11,32 +11,32 @@ frappe.ui.form.on("Item", {
         frm.fields_dict.custom_model.get_query = function (doc) {
             return {
                 filters: [
-                    ['main_selection', '=', frm.doc?.custom_main_selection || ""],
+                    ['main_selection', '=', frm.doc?.custom_product_family || ""],
                     ['series', '=', frm.doc?.custom_series || ""]
                 ]
             };
         };
     },
-    custom_main_selection: (frm) => {
-        handleMainSelectionUpdate(frm);
+    custom_product_family: (frm) => {
+        handleProductFamilyUpdate(frm);
     },
     custom_series: (frm) => {
         handleSeriesUpdate(frm);
     },
     custom_list_price: (frm) => {
         const custom_list_price = frm.doc.custom_list_price ?? 0;
-        
+
         // Unit Price is 15% more than List Price
         frm.set_value("custom_unit_price", custom_list_price.toFixed(2) * 1.15);
     }
 });
 
 
-function handleMainSelectionUpdate(frm) {
+function handleProductFamilyUpdate(frm) {
     frm.fields_dict.custom_series.get_query = function (doc) {
         return {
             filters: [
-                ['main_selection', '=', frm.doc.custom_main_selection]
+                ['main_selection', '=', frm.doc.custom_product_family]
             ]
         };
     };
@@ -52,7 +52,7 @@ function handleSeriesUpdate(frm) {
     frm.fields_dict.custom_model.get_query = function (doc) {
         return {
             filters: [
-                ['main_selection', '=', frm.doc.custom_main_selection],
+                ['main_selection', '=', frm.doc.custom_product_family],
                 ['series', '=', frm.doc.custom_series]
             ]
         };
