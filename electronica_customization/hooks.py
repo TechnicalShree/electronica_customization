@@ -142,10 +142,11 @@ doctype_js = {
 # DocType Class
 # ---------------
 # Override standard doctype classes
-# override_doctype_class = {
-#     # "ToDo": "custom_app.overrides.CustomToDo"
-#     "Warranty Claim": "electronica_customization.electronica_customization.overrides.warranty_claim.CustomWarrantyClaim",
-# }
+override_doctype_class = {
+    # "ToDo": "custom_app.overrides.CustomToDo"
+    # "Warranty Claim": "electronica_customization.electronica_customization.overrides.warranty_claim.CustomWarrantyClaim",
+    # "Item": "electronica_customization.electronica_customization.overrides.item.CustomItem",
+}
 
 # Document Events
 # ---------------
