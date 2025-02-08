@@ -1,22 +1,21 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:indent_no",
  "creation": "2025-01-19 14:38:58.655526",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "information_section",
-  "installation",
-  "status",
-  "indent_no",
+  "service_call",
+  "custom_is_installation",
   "indent_type",
   "sum_of_list_price",
   "sum_of_total_price",
-  "problem_observed",
+  "custom_problem_observed",
   "reason",
   "indent_category",
   "column_break_arsd",
+  "status",
   "dispatch_date",
   "record_type",
   "transport_mode",
@@ -29,24 +28,10 @@
  ],
  "fields": [
   {
-   "fieldname": "installation",
-   "fieldtype": "Link",
-   "label": "Installation",
-   "options": "Warranty Claim",
-   "reqd": 1
-  },
-  {
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nApproved By Branch Manager\nApproved by HO\nFactory Approval\nRejected\nActivated\nDispatch\nCompleted"
-  },
-  {
-   "fieldname": "indent_no",
-   "fieldtype": "Data",
-   "label": "Indent No.",
-   "reqd": 1,
-   "unique": 1
+   "options": "\nOpen\nApproved By Branch Manager\nApproved by HO\nFactory Approval\nRejected\nActivated\nDispatch\nCompleted"
   },
   {
    "fieldname": "indent_type",
@@ -65,21 +50,15 @@
    "label": "Sum of Total Price"
   },
   {
-   "fieldname": "problem_observed",
-   "fieldtype": "Small Text",
-   "in_list_view": 1,
-   "label": "Problem Observed",
-   "reqd": 1
-  },
-  {
    "fieldname": "reason",
    "fieldtype": "Select",
-   "label": "Reason"
+   "label": "Reason",
+   "options": "\nMaterial Not Received\nMaterial Not Dispatch\nnone"
   },
   {
    "fieldname": "indent_category",
    "fieldtype": "Select",
-   "label": "INDENT CATEGORY",
+   "label": "Indent Category",
    "options": "\nREPLACEMENT\nSHORT SUPPLY\nTRANSIT DAMAGE\nFOC\nWRONG SUPPLY"
   },
   {
@@ -143,15 +122,35 @@
    "fieldname": "additional_details",
    "fieldtype": "Long Text",
    "label": "Additional Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "custom_is_installation",
+   "fieldtype": "Check",
+   "label": "Is Installation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "service_call",
+   "fieldtype": "Link",
+   "label": "Service Call",
+   "options": "Warranty Claim",
+   "reqd": 1
+  },
+  {
+   "fieldname": "custom_problem_observed",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Problem Observed",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-19 15:03:38.063332",
+ "modified": "2025-02-08 09:26:01.713970",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Indent",
- "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
