@@ -17,6 +17,11 @@ def add_translation_docs():
             "source_text": "Maintenance Visit",
             "translated_text": "Engineer Visit",
         },
+        {
+            "language": "en",
+            "source_text": "Suba Settings",
+            "translated_text": "Electronica Settings",
+        },
     ]
 
     for translation in translations:
