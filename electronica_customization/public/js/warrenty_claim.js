@@ -10,7 +10,7 @@ function updateStatusOptions(frm) {
     let options = [];
     if (frm.doc.custom_is_installation) {
         // When custom_is_installation is true, allowed options:
-        options = ["New", "Approve By Branch Manager", "Approved by HO", "Factory Approval", "Rejected", "Activated", "Dispatched", "Completed"];
+        options = ["Installtion Call", "Call in Progress", "Site Readiness", "Machine Inspection And Installtion", "Module Trail", "Customer Training", "Problem Observed", "InstallationCompleted"];
     } else {
         // When custom_is_installation is false, allowed options:
         options = ["New", "Submitted for approval", "Approved", "Rejected", "Working", "Escalated", "On Hold", "Issue Resolved", "Payments Pending", "Closed"];
@@ -19,7 +19,7 @@ function updateStatusOptions(frm) {
 
     // Reset status to "New" if the current value is not allowed
     if (!options.includes(frm.doc.status)) {
-        frm.set_value("status", "New");
+        frm.set_value("status", frm.doc.custom_is_installation ? "Installtion Call" : "New");
     }
 }
 
@@ -31,6 +31,19 @@ function handleInstallationComplaint(frm) {
 
 // Main event handlers for the Warranty Claim doctype
 frappe.ui.form.on("Warranty Claim", {
+    validate: function (frm) {
+        console.log("custom_checklist_attached", frm.doc.custom_checklist_attached);
+        if (frm.doc.status === "Site Readiness") {
+            if (!frm.doc.custom_checklist_attached) {
+                frm.set_value("custom_checklist_attached", 1);
+            }
+
+            if (!frm.attachments.get_attachments().length) {
+                frappe.msgprint(__('Checklist attachment is mandatory when "Checklist Attached" is checked.'));
+                frappe.validated = false;
+            }
+        }
+    },
     refresh: function (frm) {
         // Add custom button for creating indent
         frm.add_custom_button(__("Create Indent"), function () {
