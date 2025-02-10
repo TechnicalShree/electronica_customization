@@ -25,7 +25,7 @@ function updateStatusOptions(frm) {
 
 // Helper function to update the complaint field based on custom_is_installation
 function handleInstallationComplaint(frm) {
-    frm.set_value("complaint", frm.doc.custom_is_installation ? "Installation" : "");
+    frm.set_value("complaint", !!frm.doc.custom_is_installation ? "Installation" : "");
     frm.refresh_field("complaint");
 }
 
@@ -55,6 +55,7 @@ frappe.ui.form.on("Warranty Claim", {
 
         // Set field properties and update status options on refresh
         setCustomInstallationReadOnly(frm);
+        handleInstallationComplaint(frm);
         updateStatusOptions(frm);
     },
 
