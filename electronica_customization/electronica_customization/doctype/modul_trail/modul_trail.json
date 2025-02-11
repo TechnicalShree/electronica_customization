@@ -1,0 +1,481 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-10 23:48:52.060098",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "name_of_service_engineer",
+  "machine_serial_no",
+  "service_call",
+  "column_break_cqgs",
+  "regionlocation",
+  "machine_model",
+  "section_break_vqzd",
+  "screw_dia",
+  "mold_size_height_mm",
+  "mold_size_length_mm",
+  "product_size_heightmm",
+  "product_size_lengthmm",
+  "nos_air_ejection",
+  "nos_of_core",
+  "injection_fill_time_sec",
+  "refill_time_sec",
+  "screw_speed_rpm",
+  "float_uohq",
+  "hot_runner_mold",
+  "column_break_dfgn",
+  "injection_unit_size",
+  "mold_size_widthmm",
+  "mold_size_diameter",
+  "product_size_widthmm",
+  "product_size_diameter",
+  "nos_of_cavity_nos",
+  "weight_of_single_product_gms",
+  "hold_on_time_sec",
+  "cooling_time_sec",
+  "actual_refill_pressure_bar",
+  "total_cycle_time_sec",
+  "total_shot_weight_with_runnergms",
+  "section_break_vmlu",
+  "product_category",
+  "product_sub_category",
+  "section_break_dlhd",
+  "material_1",
+  "grade1",
+  "percent1",
+  "master_batch_make",
+  "column_break_sqdh",
+  "material_2",
+  "grade2",
+  "percent2",
+  "master_batch_grade",
+  "column_break_bsna",
+  "material_3",
+  "grade3",
+  "percent3",
+  "master_batch_percent",
+  "column_break_krpu",
+  "material_4",
+  "grade4",
+  "percent4",
+  "clamping_force_tonnes",
+  "section_break_slqg",
+  "set_temperature_deg_cel_z1",
+  "set_temperature_deg_cel_z4",
+  "act_temperature_deg_cel_z1",
+  "act_temperature_deg_cel_z4",
+  "column_break_jbub",
+  "set_temperature_deg_cel_z2",
+  "set_temperature_deg_cel_z5",
+  "act_temperature_deg_cel_z2",
+  "act_temperature_deg_cel_z5",
+  "column_break_pzns",
+  "set_temperature_deg_cel_z3",
+  "set_temperature_deg_cel_z6",
+  "act_temperature_deg_cel_z3",
+  "act_temperature_deg_cel_z6",
+  "tab_2_tab",
+  "important_notes_from_service_engineer",
+  "product_picture",
+  "product_pic_with_runner_and_all_cavity_as_ejected_from_mold",
+  "screen_shots"
+ ],
+ "fields": [
+  {
+   "fieldname": "name_of_service_engineer",
+   "fieldtype": "Data",
+   "label": "Name of Service Engineer"
+  },
+  {
+   "fieldname": "machine_serial_no",
+   "fieldtype": "Link",
+   "label": "Machine Serial No.",
+   "options": "Serial No"
+  },
+  {
+   "fieldname": "column_break_cqgs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "regionlocation",
+   "fieldtype": "Data",
+   "label": "Region/Location"
+  },
+  {
+   "fieldname": "machine_model",
+   "fieldtype": "Link",
+   "label": "Machine Model",
+   "options": "Product Family Master"
+  },
+  {
+   "fieldname": "section_break_vqzd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "screw_dia",
+   "fieldtype": "Float",
+   "label": "Screw Dia."
+  },
+  {
+   "fieldname": "mold_size_height_mm",
+   "fieldtype": "Float",
+   "label": "Mold Size Height (mm)"
+  },
+  {
+   "fieldname": "mold_size_length_mm",
+   "fieldtype": "Float",
+   "label": "Mold Size Length (mm)"
+  },
+  {
+   "fieldname": "product_size_heightmm",
+   "fieldtype": "Float",
+   "label": "Product Size Height(mm)"
+  },
+  {
+   "fieldname": "product_size_lengthmm",
+   "fieldtype": "Float",
+   "label": "Product Size Length(mm)"
+  },
+  {
+   "fieldname": "nos_air_ejection",
+   "fieldtype": "Select",
+   "label": "NOS Air Ejection",
+   "options": "\nMoving both\nFix\n1\n2\n3\n4"
+  },
+  {
+   "fieldname": "nos_of_core",
+   "fieldtype": "Select",
+   "label": "NOS of Core",
+   "options": "\nMoving both\nFix\n1\n2\n3\n4\n0"
+  },
+  {
+   "fieldname": "injection_fill_time_sec",
+   "fieldtype": "Duration",
+   "label": "Injection (Fill Time) (sec)"
+  },
+  {
+   "fieldname": "refill_time_sec",
+   "fieldtype": "Duration",
+   "label": "Refill Time (sec)"
+  },
+  {
+   "fieldname": "screw_speed_rpm",
+   "fieldtype": "Float",
+   "label": "Screw Speed (RPM)"
+  },
+  {
+   "fieldname": "float_uohq",
+   "fieldtype": "Float"
+  },
+  {
+   "fieldname": "hot_runner_mold",
+   "fieldtype": "Select",
+   "label": "Hot Runner Mold",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_dfgn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "injection_unit_size",
+   "fieldtype": "Float",
+   "label": "Injection Unit Size"
+  },
+  {
+   "fieldname": "mold_size_widthmm",
+   "fieldtype": "Float",
+   "label": "Mold Size Width(mm)"
+  },
+  {
+   "fieldname": "mold_size_diameter",
+   "fieldtype": "Float",
+   "label": "Mold Size Diameter"
+  },
+  {
+   "fieldname": "product_size_widthmm",
+   "fieldtype": "Float",
+   "label": "Product Size Width(mm)"
+  },
+  {
+   "fieldname": "product_size_diameter",
+   "fieldtype": "Float",
+   "label": "Product Size Diameter"
+  },
+  {
+   "fieldname": "nos_of_cavity_nos",
+   "fieldtype": "Float",
+   "label": "NOS of Cavity (NOS)"
+  },
+  {
+   "fieldname": "weight_of_single_product_gms",
+   "fieldtype": "Data",
+   "label": "Weight of Single Product (gms)"
+  },
+  {
+   "fieldname": "hold_on_time_sec",
+   "fieldtype": "Duration",
+   "label": "Hold on Time (sec)"
+  },
+  {
+   "fieldname": "cooling_time_sec",
+   "fieldtype": "Duration",
+   "label": "Cooling Time (sec)"
+  },
+  {
+   "fieldname": "actual_refill_pressure_bar",
+   "fieldtype": "Float",
+   "label": "Actual Refill Pressure (Bar)"
+  },
+  {
+   "fieldname": "total_cycle_time_sec",
+   "fieldtype": "Duration",
+   "label": "Total Cycle Time (sec)"
+  },
+  {
+   "fieldname": "total_shot_weight_with_runnergms",
+   "fieldtype": "Float",
+   "label": "Total Shot Weight With Runner(gms)"
+  },
+  {
+   "fieldname": "section_break_vmlu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "product_category",
+   "fieldtype": "Link",
+   "label": "Product Category",
+   "options": "Product Category"
+  },
+  {
+   "fieldname": "section_break_dlhd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "material_1",
+   "fieldtype": "Data",
+   "label": "Material 1"
+  },
+  {
+   "fieldname": "grade1",
+   "fieldtype": "Data",
+   "label": "Grade1"
+  },
+  {
+   "fieldname": "percent1",
+   "fieldtype": "Data",
+   "label": "Percent1"
+  },
+  {
+   "fieldname": "master_batch_make",
+   "fieldtype": "Data",
+   "label": "Master Batch Make"
+  },
+  {
+   "fieldname": "column_break_sqdh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "material_2",
+   "fieldtype": "Data",
+   "label": "Material 2"
+  },
+  {
+   "fieldname": "grade2",
+   "fieldtype": "Data",
+   "label": "Grade2"
+  },
+  {
+   "fieldname": "percent2",
+   "fieldtype": "Data",
+   "label": "Percent2"
+  },
+  {
+   "fieldname": "master_batch_grade",
+   "fieldtype": "Data",
+   "label": "Master Batch Grade"
+  },
+  {
+   "fieldname": "column_break_bsna",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "material_3",
+   "fieldtype": "Data",
+   "label": "Material 3"
+  },
+  {
+   "fieldname": "grade3",
+   "fieldtype": "Data",
+   "label": "Grade3"
+  },
+  {
+   "fieldname": "percent3",
+   "fieldtype": "Data",
+   "label": "Percent3"
+  },
+  {
+   "fieldname": "master_batch_percent",
+   "fieldtype": "Data",
+   "label": "Master Batch Percent"
+  },
+  {
+   "fieldname": "column_break_krpu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "material_4",
+   "fieldtype": "Data",
+   "label": "Material 4"
+  },
+  {
+   "fieldname": "grade4",
+   "fieldtype": "Data",
+   "label": "Grade4"
+  },
+  {
+   "fieldname": "percent4",
+   "fieldtype": "Data",
+   "label": "Percent4"
+  },
+  {
+   "fieldname": "clamping_force_tonnes",
+   "fieldtype": "Data",
+   "label": "Clamping Force (tonnes)"
+  },
+  {
+   "fieldname": "section_break_slqg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "set_temperature_deg_cel_z1",
+   "fieldtype": "Float",
+   "label": "Set Temperature (deg. Cel) Z1"
+  },
+  {
+   "fieldname": "set_temperature_deg_cel_z4",
+   "fieldtype": "Float",
+   "label": "Set Temperature (deg. Cel) Z4"
+  },
+  {
+   "fieldname": "act_temperature_deg_cel_z1",
+   "fieldtype": "Float",
+   "label": "Act Temperature (deg. Cel) Z1"
+  },
+  {
+   "fieldname": "act_temperature_deg_cel_z4",
+   "fieldtype": "Float",
+   "label": "Act Temperature (deg. Cel) Z4"
+  },
+  {
+   "fieldname": "column_break_jbub",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "set_temperature_deg_cel_z2",
+   "fieldtype": "Float",
+   "label": "Set Temperature (deg. Cel) Z2"
+  },
+  {
+   "fieldname": "set_temperature_deg_cel_z5",
+   "fieldtype": "Float",
+   "label": "Set Temperature (deg. Cel) Z5"
+  },
+  {
+   "fieldname": "act_temperature_deg_cel_z2",
+   "fieldtype": "Float",
+   "label": "Act Temperature (deg. Cel) Z2"
+  },
+  {
+   "fieldname": "act_temperature_deg_cel_z5",
+   "fieldtype": "Float",
+   "label": "Act Temperature (deg. Cel) Z5"
+  },
+  {
+   "fieldname": "column_break_pzns",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "set_temperature_deg_cel_z3",
+   "fieldtype": "Float",
+   "label": "Set Temperature (deg. Cel) Z3"
+  },
+  {
+   "fieldname": "set_temperature_deg_cel_z6",
+   "fieldtype": "Float",
+   "label": "Set Temperature (deg. Cel) Z6"
+  },
+  {
+   "fieldname": "act_temperature_deg_cel_z3",
+   "fieldtype": "Float",
+   "label": "Act Temperature (deg. Cel) Z3"
+  },
+  {
+   "fieldname": "act_temperature_deg_cel_z6",
+   "fieldtype": "Float",
+   "label": "Act Temperature (deg. Cel) Z6"
+  },
+  {
+   "fieldname": "service_call",
+   "fieldtype": "Link",
+   "label": "Service Call",
+   "options": "Warranty Claim"
+  },
+  {
+   "fieldname": "product_sub_category",
+   "fieldtype": "Link",
+   "label": "Product Sub Category",
+   "options": "Product Sub Category"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Additional Details"
+  },
+  {
+   "fieldname": "important_notes_from_service_engineer",
+   "fieldtype": "Small Text",
+   "label": "Important Notes from Service Engineer"
+  },
+  {
+   "fieldname": "product_picture",
+   "fieldtype": "Long Text",
+   "label": "Product Picture"
+  },
+  {
+   "fieldname": "product_pic_with_runner_and_all_cavity_as_ejected_from_mold",
+   "fieldtype": "Long Text",
+   "label": "Product pic. with runner and all cavity (as ejected from mold)"
+  },
+  {
+   "fieldname": "screen_shots",
+   "fieldtype": "Long Text",
+   "label": "Screen Shots"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-11 18:56:40.648829",
+ "modified_by": "Administrator",
+ "module": "Electronica Customization",
+ "name": "Modul Trail",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

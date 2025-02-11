@@ -1,0 +1,97 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-11 18:57:05.252942",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "service_engineer_name",
+  "machine_model",
+  "problem_observed",
+  "column_break_xyco",
+  "customer_name",
+  "serial_number",
+  "action_taken",
+  "section_break_azef",
+  "suggessionremark"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "service_engineer_name",
+   "fieldtype": "Data",
+   "label": "Service Engineer Name"
+  },
+  {
+   "fieldname": "machine_model",
+   "fieldtype": "Data",
+   "label": "Machine Model"
+  },
+  {
+   "description": "Please insert the point for Problem Observed using bullet points. e.g.\n\n1.\n\n2.",
+   "fieldname": "problem_observed",
+   "fieldtype": "Small Text",
+   "label": "Problem Observed"
+  },
+  {
+   "fieldname": "column_break_xyco",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "serial_number",
+   "fieldtype": "Link",
+   "label": "Serial number",
+   "options": "Serial No"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "label": "Customer Name",
+   "options": "Customer"
+  },
+  {
+   "description": "Please insert the point for Action Taken using bullet points. e.g.\n\n1.\n\n2.",
+   "fieldname": "action_taken",
+   "fieldtype": "Small Text",
+   "label": "Action Taken"
+  },
+  {
+   "fieldname": "section_break_azef",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "suggessionremark",
+   "fieldtype": "Small Text",
+   "label": "Suggession/Remark"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-11 19:05:00.107854",
+ "modified_by": "Administrator",
+ "module": "Electronica Customization",
+ "name": "Problem Observed",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
