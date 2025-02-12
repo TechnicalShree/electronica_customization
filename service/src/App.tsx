@@ -1,7 +1,6 @@
 import { FrappeProvider } from "frappe-react-sdk";
 import "chatnext-ui/dist/index";
 import "formiojs/dist/formio.full.min.css";
-import "chatnext-ui/dist/index.css";
 import AppRouter from "./AppRouter";
 
 function App() {

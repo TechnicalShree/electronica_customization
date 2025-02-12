@@ -1,14 +1,20 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link type="text/css" rel="stylesheet" href="https://cdn.form.io/formiojs/formio.full.min.css">
-    <title>Vite + React + TS</title>
-  </head>
+<head>
+  <link rel="stylesheet" href="/assets/nextai/node_modules/chatnext-ui/dist/index.css"/>
+  <link rel="stylesheet" href="/whatsapp/frappe-desk.css"/>
+</head>
   <body>
     <div id="root"></div>
+    <script>
+      window.csrf_token = '{{ frappe.session.csrf_token }}';
+
+      window.frappe = window.frappe || {};
+      window.frappe.csrf_token = '{{ frappe.session.csrf_token }}';
+
+      window.frappe.session = window.frappe.session || {};
+      window.frappe.session.csrf_token = '{{ frappe.session.csrf_token }}';
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

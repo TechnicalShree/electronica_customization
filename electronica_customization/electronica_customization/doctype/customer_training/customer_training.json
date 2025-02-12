@@ -1,0 +1,582 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-12 18:56:52.008724",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "product_family",
+  "customer_name",
+  "question_1",
+  "question_2",
+  "question_3",
+  "question_7",
+  "column_break_befm",
+  "serial_no",
+  "hour_count",
+  "question_4",
+  "question_5",
+  "question_6",
+  "section_break_ntgr",
+  "auto_purge",
+  "auto_mold_height__auto_tonnage",
+  "pulsating_ejector",
+  "mold_close",
+  "column_break_hxnd",
+  "mold_data_storage",
+  "auto_alarm",
+  "heating_schedule",
+  "production_monitoring_etc",
+  "column_break_retn",
+  "position_and_or_time_based_injection",
+  "monitoring_function_using_auto_alarm",
+  "spc_data",
+  "section_break_spwy",
+  "question_8",
+  "question_9",
+  "question_10",
+  "question_11",
+  "question_12",
+  "column_break_jfhf",
+  "question_13",
+  "question_14",
+  "question_15",
+  "question_16",
+  "section_break_siga",
+  "carriage_forward",
+  "injection",
+  "ejector_forward",
+  "mold_height_negative",
+  "proportional_pressure_control",
+  "column_break_jwzx",
+  "refilling",
+  "carriage_backward",
+  "mold_open",
+  "mold_safety",
+  "column_break_mkgv",
+  "suckback",
+  "ejector_backward",
+  "mold_height_positive",
+  "proportional_speed_control",
+  "section_break_fwkh",
+  "question_17",
+  "section_break_thbu",
+  "clamping_cylinder",
+  "injection_cylinder",
+  "column_break_ynux",
+  "carriage_cylinder",
+  "column_break_hjok",
+  "ejector_cylinder",
+  "section_break_baoq",
+  "question_18",
+  "section_break_rosa",
+  "greasing",
+  "self_lubricating_bushes_0_grade_grease",
+  "tiebar_therads_mos2",
+  "chain_coupling",
+  "return_line_filter",
+  "column_break_tmef",
+  "transmission_shaft_rollguard_ptfe",
+  "oil_lubrication_clamping_unit",
+  "injection_side_guide_rods_servogen2",
+  "suction_strainer",
+  "hydraulic_oil",
+  "section_break_olxa",
+  "question_19",
+  "question_21",
+  "column_break_tctt",
+  "question_20",
+  "question_22",
+  "section_break_cffb",
+  "remark"
+ ],
+ "fields": [
+  {
+   "fieldname": "product_family",
+   "fieldtype": "Link",
+   "label": "Product Family",
+   "options": "Product Family Master"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "question_1",
+   "fieldtype": "Select",
+   "label": "Explanation about injection unit & its accessories",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_2",
+   "fieldtype": "Select",
+   "label": "Explanation About Platen Layout / Locating Ring etc.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_3",
+   "fieldtype": "Select",
+   "label": "Explanation about Limit Switches, Proximity Switches & L.T. Their Locations on the Machine & Respective Functions.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_befm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "serial_no",
+   "fieldtype": "Link",
+   "label": "Serial No",
+   "options": "Serial No"
+  },
+  {
+   "fieldname": "hour_count",
+   "fieldtype": "Duration",
+   "label": "Hour Count"
+  },
+  {
+   "fieldname": "question_4",
+   "fieldtype": "Select",
+   "label": "Explanation about clamping unit & its accessories",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_5",
+   "fieldtype": "Select",
+   "label": "Explanation about Electrical and Hydraulic Safety Features & Safety Rules.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_6",
+   "fieldtype": "Select",
+   "label": "Explanation About all Controller Screens with the Effectiveness of Each and Every Parameter Setting in View of Optimization of Cycle Time.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_7",
+   "fieldtype": "Select",
+   "label": "Explanation about the features of the machine",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "section_break_ntgr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_purge",
+   "fieldtype": "Check",
+   "label": "Auto Purge"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_mold_height__auto_tonnage",
+   "fieldtype": "Check",
+   "label": "Auto Mold Height / Auto Tonnage"
+  },
+  {
+   "default": "0",
+   "fieldname": "pulsating_ejector",
+   "fieldtype": "Check",
+   "label": "Pulsating Ejector"
+  },
+  {
+   "default": "0",
+   "fieldname": "mold_close",
+   "fieldtype": "Check",
+   "label": "Mold Close"
+  },
+  {
+   "fieldname": "column_break_hxnd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "mold_data_storage",
+   "fieldtype": "Check",
+   "label": "Mold Data Storage"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_alarm",
+   "fieldtype": "Check",
+   "label": "Auto Alarm"
+  },
+  {
+   "default": "0",
+   "fieldname": "heating_schedule",
+   "fieldtype": "Check",
+   "label": "Heating Schedule"
+  },
+  {
+   "default": "0",
+   "fieldname": "production_monitoring_etc",
+   "fieldtype": "Check",
+   "label": "Production Monitoring etc"
+  },
+  {
+   "fieldname": "column_break_retn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "position_and_or_time_based_injection",
+   "fieldtype": "Check",
+   "label": "Position AND OR Time based injection"
+  },
+  {
+   "default": "0",
+   "fieldname": "monitoring_function_using_auto_alarm",
+   "fieldtype": "Check",
+   "label": "Monitoring Function using Auto Alarm"
+  },
+  {
+   "default": "0",
+   "fieldname": "spc_data",
+   "fieldtype": "Check",
+   "label": "SPC Data"
+  },
+  {
+   "fieldname": "section_break_spwy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "question_8",
+   "fieldtype": "Select",
+   "label": "Explanation of Various Protection Devices like OVUV Assly, Fuses, OLR, MCB's etc.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_9",
+   "fieldtype": "Select",
+   "label": "Explanation about the Mold Change, Low Speed, Low Pressure, Mold Protection Parameters",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_10",
+   "fieldtype": "Select",
+   "label": "Explanation about the Mold Wt & Mold Parallelity",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_11",
+   "fieldtype": "Select",
+   "label": "Back pressure adjustment for processing",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_12",
+   "fieldtype": "Select",
+   "label": "Details of hydraulic valve",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_jfhf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "question_13",
+   "fieldtype": "Select",
+   "label": "Explanation about Settings for Mold, Mold Thickness, Screw, Carriage & Ejector.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_14",
+   "fieldtype": "Select",
+   "label": "Explain about Manual / Semi / Auto Control",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_15",
+   "fieldtype": "Select",
+   "label": "Nozzle Alignment with Mold's Sprue Bush & Importance of the Locating Ring.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_16",
+   "fieldtype": "Select",
+   "label": "Description about Alarms there Causes and Remedies",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "section_break_siga",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "carriage_forward",
+   "fieldtype": "Check",
+   "label": "Carriage Forward"
+  },
+  {
+   "default": "0",
+   "fieldname": "injection",
+   "fieldtype": "Check",
+   "label": "Injection"
+  },
+  {
+   "default": "0",
+   "fieldname": "ejector_forward",
+   "fieldtype": "Check",
+   "label": "Ejector Forward"
+  },
+  {
+   "default": "0",
+   "fieldname": "mold_height_negative",
+   "fieldtype": "Check",
+   "label": "Mold Height Negative"
+  },
+  {
+   "default": "0",
+   "fieldname": "proportional_pressure_control",
+   "fieldtype": "Check",
+   "label": "Proportional Pressure Control"
+  },
+  {
+   "fieldname": "column_break_jwzx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "refilling",
+   "fieldtype": "Check",
+   "label": "Refilling"
+  },
+  {
+   "default": "0",
+   "fieldname": "carriage_backward",
+   "fieldtype": "Check",
+   "label": "Carriage Backward"
+  },
+  {
+   "default": "0",
+   "fieldname": "mold_open",
+   "fieldtype": "Check",
+   "label": "Mold Open"
+  },
+  {
+   "default": "0",
+   "fieldname": "mold_safety",
+   "fieldtype": "Check",
+   "label": "Mold Safety"
+  },
+  {
+   "fieldname": "column_break_mkgv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "suckback",
+   "fieldtype": "Check",
+   "label": "Suckback"
+  },
+  {
+   "default": "0",
+   "fieldname": "ejector_backward",
+   "fieldtype": "Check",
+   "label": "Ejector Backward"
+  },
+  {
+   "default": "0",
+   "fieldname": "mold_height_positive",
+   "fieldtype": "Check",
+   "label": "Mold Height Positive"
+  },
+  {
+   "default": "0",
+   "fieldname": "proportional_speed_control",
+   "fieldtype": "Check",
+   "label": "Proportional Speed Control"
+  },
+  {
+   "fieldname": "section_break_fwkh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "question_17",
+   "fieldtype": "Select",
+   "label": "Information about Hydraulic cylinders",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "section_break_thbu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "clamping_cylinder",
+   "fieldtype": "Check",
+   "label": "Clamping Cylinder"
+  },
+  {
+   "default": "0",
+   "fieldname": "injection_cylinder",
+   "fieldtype": "Check",
+   "label": "Injection Cylinder"
+  },
+  {
+   "fieldname": "column_break_ynux",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "carriage_cylinder",
+   "fieldtype": "Check",
+   "label": "Carriage Cylinder"
+  },
+  {
+   "fieldname": "column_break_hjok",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "ejector_cylinder",
+   "fieldtype": "Check",
+   "label": "Ejector Cylinder"
+  },
+  {
+   "fieldname": "section_break_baoq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "question_18",
+   "fieldtype": "Select",
+   "label": "Maintenance Training",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "section_break_rosa",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "greasing",
+   "fieldtype": "Check",
+   "label": "Greasing"
+  },
+  {
+   "default": "0",
+   "fieldname": "self_lubricating_bushes_0_grade_grease",
+   "fieldtype": "Check",
+   "label": "Self Lubricating Bushes-0 Grade Grease"
+  },
+  {
+   "default": "0",
+   "fieldname": "tiebar_therads_mos2",
+   "fieldtype": "Check",
+   "label": "Tiebar Therads - MOS2"
+  },
+  {
+   "default": "0",
+   "fieldname": "chain_coupling",
+   "fieldtype": "Check",
+   "label": "Chain Coupling"
+  },
+  {
+   "default": "0",
+   "fieldname": "return_line_filter",
+   "fieldtype": "Check",
+   "label": "Return Line Filter"
+  },
+  {
+   "fieldname": "column_break_tmef",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "transmission_shaft_rollguard_ptfe",
+   "fieldtype": "Check",
+   "label": "Transmission Shaft-Rollguard PTFE"
+  },
+  {
+   "default": "0",
+   "fieldname": "oil_lubrication_clamping_unit",
+   "fieldtype": "Check",
+   "label": "Oil Lubrication Clamping Unit"
+  },
+  {
+   "default": "0",
+   "fieldname": "injection_side_guide_rods_servogen2",
+   "fieldtype": "Check",
+   "label": "Injection Side Guide Rods-Servogen2"
+  },
+  {
+   "default": "0",
+   "fieldname": "suction_strainer",
+   "fieldtype": "Check",
+   "label": "Suction Strainer"
+  },
+  {
+   "default": "0",
+   "fieldname": "hydraulic_oil",
+   "fieldtype": "Check",
+   "label": "Hydraulic Oil"
+  },
+  {
+   "fieldname": "section_break_olxa",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "question_19",
+   "fieldtype": "Select",
+   "label": "Explain About Optional Features if Any",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_21",
+   "fieldtype": "Select",
+   "label": "Explanation about the Periodic Maintenance & Handing over the Schedule to the Customer.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_tctt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "question_20",
+   "fieldtype": "Select",
+   "label": "Explanation About Warranty Norms",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_22",
+   "fieldtype": "Select",
+   "label": "Tonnage setting",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "section_break_cffb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Long Text",
+   "label": "Remark"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-12 19:32:15.937102",
+ "modified_by": "Administrator",
+ "module": "Electronica Customization",
+ "name": "Customer Training",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
