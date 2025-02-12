@@ -254,10 +254,9 @@
    "fieldtype": "Section Break"
   },
   {
-   "description": "Check the Following",
    "fieldname": "question_19",
    "fieldtype": "Select",
-   "label": "Question 19",
+   "label": "Check the Following",
    "options": "\nYes\nNo"
   },
   {
@@ -395,7 +394,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-13 00:00:05.198541",
+ "modified": "2025-02-13 00:19:10.967478",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Machine Inspection",
