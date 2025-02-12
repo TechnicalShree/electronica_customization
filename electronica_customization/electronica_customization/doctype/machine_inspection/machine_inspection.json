@@ -1,0 +1,420 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-12 23:29:06.893460",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "column_break_nbec",
+  "service_call",
+  "section_break_rdka",
+  "mc_model",
+  "hourcount",
+  "question_1",
+  "question_2",
+  "question_3",
+  "question_4",
+  "question_5",
+  "question_6",
+  "question_15",
+  "question_16",
+  "question_17",
+  "question_18",
+  "column_break_hbqx",
+  "serial_no",
+  "e_c_date",
+  "question_7",
+  "question_8",
+  "question_9",
+  "question_10",
+  "question_11",
+  "question_12",
+  "question_13",
+  "question_14",
+  "section_break_rlbh",
+  "heat_exchanger",
+  "column_break_tocd",
+  "cooling_ring",
+  "column_break_azpg",
+  "mould_cooling_manifold",
+  "section_break_niwv",
+  "question_19",
+  "cable_size",
+  "back_up_fuses_for_incoming_supply",
+  "section_break_lqac",
+  "question_20",
+  "question_21",
+  "section_break_phev",
+  "control_panel",
+  "column_break_xpzf",
+  "pendent",
+  "column_break_tkcj",
+  "junction_box",
+  "column_break_fgcd",
+  "limit_switch",
+  "section_break_orgu",
+  "question_22",
+  "question_23",
+  "question_24",
+  "question_25",
+  "question_26",
+  "column_break_zbis",
+  "question_27",
+  "question_28",
+  "question_29",
+  "question_30"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "mc_model",
+   "fieldtype": "Data",
+   "label": "M/C Model"
+  },
+  {
+   "fieldname": "hourcount",
+   "fieldtype": "Duration",
+   "label": "HourCount"
+  },
+  {
+   "fieldname": "question_1",
+   "fieldtype": "Select",
+   "label": "Inspect the machine for transit damages & convey to the factory (if any)",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_2",
+   "fieldtype": "Select",
+   "label": "Check all packing boxes as per the packing list.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_3",
+   "fieldtype": "Select",
+   "label": "Check the machine positioning. Keep 1MTR space from all side for easy maintenance.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_4",
+   "fieldtype": "Select",
+   "label": "Fill Hydraulic oil (Grade As Per Pump Required)",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_5",
+   "fieldtype": "Select",
+   "label": "Check tightness of Stationary Platen & Guide rod support bolts.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_6",
+   "fieldtype": "Select",
+   "label": "Fit & align Clamping side & Injection side L.T.'s",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_hbqx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "serial_no",
+   "fieldtype": "Link",
+   "label": "Serial No.",
+   "options": "Serial No"
+  },
+  {
+   "fieldname": "e_c_date",
+   "fieldtype": "Date",
+   "label": "E&C Date"
+  },
+  {
+   "fieldname": "question_7",
+   "fieldtype": "Select",
+   "label": "Check if any short supplied material & convey to the factory.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_8",
+   "fieldtype": "Select",
+   "label": "Level the machine with in 0.06mm / Meter Across & along the tiebar (Parallel)",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_9",
+   "fieldtype": "Select",
+   "label": "Remove the grease applied on tiebars, Cross head guide rod, Base frame pads, Toggle link in case of oil lubrication system.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_10",
+   "fieldtype": "Select",
+   "label": "Check for proper lubricants for respective assemblies 00 grade grease for Clamping unit Mobil 222 grease for transmission shaft assly.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_11",
+   "fieldtype": "Select",
+   "label": "Fit the machine cover assly.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_nbec",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_call",
+   "fieldtype": "Link",
+   "label": "Service Call",
+   "options": "Warranty Claim"
+  },
+  {
+   "fieldname": "section_break_rdka",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "question_15",
+   "fieldtype": "Select",
+   "label": "Check all covers for proper matching with each other.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_16",
+   "fieldtype": "Select",
+   "label": "Check the actuation of limit switches & Hydraulic safety lever with door movement.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_17",
+   "fieldtype": "Select",
+   "label": "Fit the hopper assembly on barrel platen.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_18",
+   "fieldtype": "Select",
+   "label": "Check cooling water connection",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_12",
+   "fieldtype": "Select",
+   "label": "Check smooth movement of the front & rear door.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_13",
+   "fieldtype": "Select",
+   "label": "Fit the injection side cover.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_14",
+   "fieldtype": "Select",
+   "label": "Check barrel throat for foreign material.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "section_break_rlbh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "heat_exchanger",
+   "fieldtype": "Check",
+   "label": "Heat exchanger"
+  },
+  {
+   "fieldname": "column_break_tocd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "cooling_ring",
+   "fieldtype": "Check",
+   "label": "Cooling ring"
+  },
+  {
+   "fieldname": "column_break_azpg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "mould_cooling_manifold",
+   "fieldtype": "Check",
+   "label": "Mould Cooling Manifold"
+  },
+  {
+   "fieldname": "section_break_niwv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": "Check the Following",
+   "fieldname": "question_19",
+   "fieldtype": "Select",
+   "label": "Question 19",
+   "options": "\nYes\nNo"
+  },
+  {
+   "default": "0",
+   "fieldname": "cable_size",
+   "fieldtype": "Check",
+   "label": "Cable Size"
+  },
+  {
+   "default": "0",
+   "fieldname": "back_up_fuses_for_incoming_supply",
+   "fieldtype": "Check",
+   "label": "Back up Fuses for incoming supply"
+  },
+  {
+   "fieldname": "section_break_lqac",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": "Check the earthing pit and connection is made as per the recommendation in readiness format. Check the routing of & quality of the earthing. Connect earthing to main control panel, motor & machine bolt",
+   "fieldname": "question_20",
+   "fieldtype": "Select",
+   "label": "Question",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_21",
+   "fieldtype": "Select",
+   "label": "Check all wire's tightness.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "section_break_phev",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "control_panel",
+   "fieldtype": "Check",
+   "label": "Control Panel"
+  },
+  {
+   "fieldname": "column_break_xpzf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "pendent",
+   "fieldtype": "Check",
+   "label": "Pendent"
+  },
+  {
+   "fieldname": "column_break_tkcj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "junction_box",
+   "fieldtype": "Check",
+   "label": "Junction Box"
+  },
+  {
+   "fieldname": "column_break_fgcd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "limit_switch",
+   "fieldtype": "Check",
+   "label": "Limit switch"
+  },
+  {
+   "fieldname": "section_break_orgu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "question_22",
+   "fieldtype": "Select",
+   "label": "Check 24 v across both SMPS (If the voltage found disturbed then adjust it by using POT provided on SMPS.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_23",
+   "fieldtype": "Select",
+   "label": "Check all thermocouple are secured in their holders.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_24",
+   "fieldtype": "Select",
+   "label": "Check all machine operations in manual mode.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "description": "Check speed & pressure calibration. (If required consult factory & adjust the same. Update the changes in customer's machine history file & convey to H.O.)",
+   "fieldname": "question_25",
+   "fieldtype": "Select",
+   "label": "Question",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_26",
+   "fieldtype": "Select",
+   "label": "Check machine operations in semi & auto mode.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_zbis",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "question_27",
+   "fieldtype": "Select",
+   "label": "Check earth & 99 ( DC -ve ) wires are separated.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_28",
+   "fieldtype": "Select",
+   "label": "Check motor direction is correct.",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_29",
+   "fieldtype": "Select",
+   "label": "Check linearization of L.T.'s. (If required, adjusted the same. Update the same in customer's machine history file & convey to H.O.) .",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "question_30",
+   "fieldtype": "Select",
+   "label": "Check Optional features required by the customer are in proper working condition.",
+   "options": "\nYes\nNo"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-13 00:00:05.198541",
+ "modified_by": "Administrator",
+ "module": "Electronica Customization",
+ "name": "Machine Inspection",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -12,6 +12,7 @@
   "question_3",
   "question_7",
   "column_break_befm",
+  "service_call",
   "serial_no",
   "hour_count",
   "question_4",
@@ -553,11 +554,19 @@
    "fieldname": "remark",
    "fieldtype": "Long Text",
    "label": "Remark"
+  },
+  {
+   "fieldname": "service_call",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Service Call",
+   "options": "Warranty Claim",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-12 19:32:15.937102",
+ "modified": "2025-02-12 20:30:53.604227",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Customer Training",
