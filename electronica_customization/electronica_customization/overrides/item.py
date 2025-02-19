@@ -1,5 +1,3 @@
-
-
 from erpnext.stock.doctype.item.item import Item
 
 

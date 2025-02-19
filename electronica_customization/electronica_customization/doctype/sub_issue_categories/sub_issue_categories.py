@@ -6,4 +6,4 @@ from frappe.model.document import Document
 
 
 class SubIssueCategories(Document):
-	pass
+    pass

@@ -257,4 +257,6 @@ override_doctype_class = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
-website_route_rules = [{'from_route': '/service/<path:app_path>', 'to_route': 'service'},]
+website_route_rules = [
+    {"from_route": "/service/<path:app_path>", "to_route": "service"},
+]

@@ -7,5 +7,5 @@ from frappe.model.naming import make_autoname
 
 
 class Indent(Document):
-	def autoname(self):
-		self.name = make_autoname(f"{self.service_call}/INDENT-.#####")
+    def autoname(self):
+        self.name = make_autoname(f"{self.service_call}/INDENT-.#####")
