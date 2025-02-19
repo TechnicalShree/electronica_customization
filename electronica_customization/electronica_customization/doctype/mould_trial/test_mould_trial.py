@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestMouldTrail(FrappeTestCase):
+class TestMouldTrial(FrappeTestCase):
     pass

@@ -22,7 +22,7 @@
   "injection_fill_time_sec",
   "refill_time_sec",
   "screw_speed_rpm",
-  "float_uohq",
+  "actual_back_pressure_bar",
   "hot_runner_mold",
   "column_break_dfgn",
   "injection_unit_size",
@@ -163,10 +163,6 @@
    "fieldname": "screw_speed_rpm",
    "fieldtype": "Float",
    "label": "Screw Speed (RPM)"
-  },
-  {
-   "fieldname": "float_uohq",
-   "fieldtype": "Float"
   },
   {
    "fieldname": "hot_runner_mold",
@@ -452,14 +448,19 @@
    "fieldname": "screen_shots",
    "fieldtype": "Long Text",
    "label": "Screen Shots"
+  },
+  {
+   "fieldname": "actual_back_pressure_bar",
+   "fieldtype": "Float",
+   "label": "Actual Back Pressure (Bar)"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-11 18:56:40.648829",
+ "modified": "2025-02-19 22:51:15.054090",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
- "name": "Mould Trail",
+ "name": "Mould Trial",
  "owner": "Administrator",
  "permissions": [
   {

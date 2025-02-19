@@ -10,7 +10,7 @@ function updateStatusOptions(frm) {
     let options = [];
     if (frm.doc.custom_is_installation) {
         // When custom_is_installation is true, allowed options:
-        options = ["Installtion Call", "Call in Progress", "Site Readiness", "Machine Inspection And Installtion", "Module Trail", "Customer Training", "Problem Observed", "InstallationCompleted"];
+        options = ["Installtion Call", "Call in Progress", "Site Readiness", "Machine Inspection And Installtion", "Mould Trial", "Customer Training", "Problem Observed", "InstallationCompleted"];
     } else {
         // When custom_is_installation is false, allowed options:
         options = ["New", "Submitted for approval", "Approved", "Rejected", "Working", "Escalated", "On Hold", "Issue Resolved", "Payments Pending", "Closed"];

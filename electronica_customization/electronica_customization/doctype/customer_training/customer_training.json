@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "product_family",
+  "e_c_date",
   "customer_name",
   "question_1",
   "question_2",
@@ -562,11 +563,16 @@
    "label": "Service Call",
    "options": "Warranty Claim",
    "reqd": 1
+  },
+  {
+   "fieldname": "e_c_date",
+   "fieldtype": "Datetime",
+   "label": "E&C Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-12 20:30:53.604227",
+ "modified": "2025-02-20 00:35:18.273003",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Customer Training",

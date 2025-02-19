@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class MouldTrail(Document):
+class MouldTrial(Document):
     pass
