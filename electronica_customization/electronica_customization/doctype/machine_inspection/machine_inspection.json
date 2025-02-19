@@ -6,10 +6,11 @@
  "engine": "InnoDB",
  "field_order": [
   "customer",
+  "mc_model",
   "column_break_nbec",
   "service_call",
+  "serial_no",
   "section_break_rdka",
-  "mc_model",
   "hourcount",
   "question_1",
   "question_2",
@@ -22,7 +23,6 @@
   "question_17",
   "question_18",
   "column_break_hbqx",
-  "serial_no",
   "e_c_date",
   "question_7",
   "question_8",
@@ -130,7 +130,7 @@
   },
   {
    "fieldname": "e_c_date",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "E&C Date"
   },
   {
@@ -394,7 +394,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-13 00:19:10.967478",
+ "modified": "2025-02-13 20:29:14.942651",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Machine Inspection",
