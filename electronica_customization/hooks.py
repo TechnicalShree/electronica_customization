@@ -10,15 +10,23 @@ app_license = "mit"
 
 # required_apps = []
 
-# fixtures = [
-#     {
-#         "doctype": "Translation",
-#         "or_filters": [
-#             ["Translation", "source_text", "=", "Warranty Claim"],
-#             ["Translation", "source_text", "=", "Maintenance Visit"],
-#         ],
-#     }
-# ]
+fixtures = [
+    {
+        "doctype": "Microapp Form Widget",
+        "or_filters": [
+            ["name", "=", "dsk62v3p17"],
+            ["name", "=", "8le3mqv47e"],
+            ["name", "=", "469f687une"],
+            ["name", "=", "83jnup6255"],
+        ],
+    },
+    {
+        "doctype": "Funnel",
+        "or_filters": [
+            ["name", "=", "Installation Approval"],
+        ],
+    }
+]
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
