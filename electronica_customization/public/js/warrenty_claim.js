@@ -25,7 +25,7 @@ function updateStatusOptions(frm) {
 
 // Helper function to update the complaint field based on custom_is_installation
 function handleInstallationComplaint(frm) {
-    frm.set_value("complaint", !!frm.doc.custom_is_installation ? "Installation" : "");
+    frm.set_value("complaint", !!frm.doc.custom_is_installation ? "Installation" : frm.doc?.complaint || "");
     frm.refresh_field("complaint");
 }
 
@@ -49,6 +49,12 @@ frappe.ui.form.on("Warranty Claim", {
         frm.add_custom_button(__("Create Indent"), function () {
             frappe.model.open_mapped_doc({
                 method: "electronica_customization.api.service_call.create_indent",
+                frm: frm,
+            });
+        });
+        frm.add_custom_button(__("Create Quotation"), function () {
+            frappe.model.open_mapped_doc({
+                method: "electronica_customization.api.service_call.create_quotation",
                 frm: frm,
             });
         });
