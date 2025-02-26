@@ -25,7 +25,7 @@ fixtures = [
         "or_filters": [
             ["name", "=", "Installation Approval"],
         ],
-    }
+    },
 ]
 
 # Each item in the list will be shown as an app in the apps page
@@ -205,7 +205,7 @@ override_doctype_class = {
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 override_doctype_dashboards = {
-	"Warranty Claim": "electronica_customization.config.warranty_claim_dashboard.get_dashboard_data"
+    "Warranty Claim": "electronica_customization.config.warranty_claim_dashboard.get_dashboard_data"
 }
 
 # exempt linked doctypes from being automatically cancelled
