@@ -133,13 +133,27 @@
     "type": "chatnext_assistant_multi_actions"
    },
    {
+    "data": "{\"doctype\":\"Warranty Claim\",\"doc_variable\":\"{{doc.name}}\",\"user_data\":\"{{doc.owner}}\",\"do_not_assign\":true,\"buttons\":[{\"option\":\"Inspection Test\",\"formQuestion\":{\"info_required\":true,\"container\":{\"is_dynamic_form\":false,\"prefill_data\":\"\",\"answer_var\":\"machine_inspection\",\"selected_form\":{\"name\":\"ll9smovfnb\",\"label\":\"Machine Inspection test\"}}}}],\"open_chatnext_assistant\":true,\"output_handles_array_field\":\"buttons\",\"output_handle_key_field\":\"option\",\"submit\":true,\"variable_path_for_output\":\"\"}",
+    "element_type": "Action",
+    "id": "9VTUFmTkKFONXR0uRpnTp",
+    "parent": "Installation Approval",
+    "parentfield": "funnel_definition",
+    "parenttype": "Funnel",
+    "position": "{\"x\":255,\"y\":60}",
+    "source": null,
+    "sourcehandle": null,
+    "target": null,
+    "targethandle": null,
+    "type": "chatnext_assistant_multi_actions"
+   },
+   {
     "data": "{\"doctype\":\"Warranty Claim\",\"doc_variable\":\"{{doc.name}}\",\"user_data\":\"{{doc.owner}}\",\"do_not_assign\":true,\"buttons\":[{\"option\":\"Inspection Complete\",\"formQuestion\":{\"info_required\":true,\"container\":{\"is_dynamic_form\":false,\"prefill_data\":\"\",\"answer_var\":\"machine_inspection\",\"selected_form\":{\"name\":\"dsk62v3p17\",\"label\":\"Machine Inspection\"}}}}],\"open_chatnext_assistant\":true,\"output_handles_array_field\":\"buttons\",\"output_handle_key_field\":\"option\",\"submit\":true,\"variable_path_for_output\":\"\"}",
     "element_type": "Action",
     "id": "z3fC3KTJ---qfqgDgAS_c",
     "parent": "Installation Approval",
     "parentfield": "funnel_definition",
     "parenttype": "Funnel",
-    "position": "{\"x\":255,\"y\":60}",
+    "position": "{\"x\":90,\"y\":210}",
     "source": null,
     "sourcehandle": null,
     "target": null,
@@ -217,7 +231,7 @@
     "type": "chatnext_assistant_multi_actions"
    },
    {
-    "data": "{\"node_label\":\"Machine Inspection Changes\",\"python_code\":\"machine_inspection = variables.get(\\\"machine_inspection\\\")\\n\\nif machine_inspection and machine_inspection.get(\\\"e_c_date\\\"):\\n    e_c_date = frappe.utils.format_datetime(frappe.utils.get_datetime(machine_inspection.get(\\\"e_c_date\\\")), \\\"yyyy-MM-dd HH:mm:ss\\\")\",\"skip_queue_and_execute_immediately\":false,\"execute_current_node_as_user\":\"\",\"submit\":true,\"variable_path_for_output\":\"\"}",
+    "data": "{\"node_label\":\"Machine Inspection Changes\",\"python_code\":\"machine_inspection = variables.get(\\\"machine_inspection\\\")\\n\\nif machine_inspection and machine_inspection.get(\\\"e_c_date\\\"):\\n    variables['machine_inspection']['e_c_date'] = frappe.utils.format_datetime(frappe.utils.get_datetime(machine_inspection.get(\\\"e_c_date\\\")), \\\"yyyy-MM-dd HH:mm:ss\\\")\",\"skip_queue_and_execute_immediately\":false,\"execute_current_node_as_user\":\"\",\"submit\":true,\"variable_path_for_output\":\"\"}",
     "element_type": "Action",
     "id": "N5SovT5X3eSBzdQZnAEIy",
     "parent": "Installation Approval",
@@ -315,7 +329,7 @@
     "type": "chatnext_assistant_form_question"
    },
    {
-    "data": "{\"node_label\":\"Serivce Call Workflow\",\"submit\":true,\"height\":999.9921264648438,\"width\":2499.984375,\"variable_path_for_output\":\"\"}",
+    "data": "{\"node_label\":\"Serivce Call Workflow\",\"submit\":true,\"height\":999.984353796083,\"width\":2499.9765351334663,\"variable_path_for_output\":\"\"}",
     "element_type": "Action",
     "id": "wnTD2GMQE57j9GfsEyXEQ",
     "parent": "Installation Approval",
@@ -329,7 +343,7 @@
     "type": "section_label"
    },
    {
-    "data": "{\"node_label\":\"Installation Call Workflow\",\"submit\":true,\"height\":999.9921264648438,\"width\":2499.984619140625,\"variable_path_for_output\":\"\"}",
+    "data": "{\"node_label\":\"Installation Call Workflow\",\"submit\":true,\"height\":999.984353796083,\"width\":2499.9843796819305,\"variable_path_for_output\":\"\"}",
     "element_type": "Action",
     "id": "5Mhr7cn0Bk8x7dW1ZXHLc",
     "parent": "Installation Approval",
@@ -371,27 +385,13 @@
     "type": "create_doctype"
    },
    {
-    "data": "{\"node_label\":\"Create Machine Inspection\",\"execute_current_node_as_user\":\"\",\"submit\":true,\"docTypeJson\":\"{\\n        \\\"doctype\\\": \\\"Machine Inspection\\\",\\n        \\\"service_call\\\": \\\"{{ doc.name }}\\\",\\n        \\\"serial_no\\\": \\\"{{ doc.serial_no }}\\\",\\n        \\\"customer\\\": \\\"{{ doc.customer }}\\\",\\n        \\\"mc_model\\\": \\\"{{ machine_inspection.mc_model }}\\\",\\n        \\\"question_1\\\": \\\"{{ machine_inspection.question_1 }}\\\",\\n        \\\"question_2\\\": \\\"{{ machine_inspection.question_2 }}\\\",\\n        \\\"question_4\\\": \\\"{{ machine_inspection.question_4 }}\\\",\\n        \\\"question_5\\\": \\\"{{ machine_inspection.question_5 }}\\\",\\n        \\\"question_6\\\": \\\"{{ machine_inspection.question_6 }}\\\",\\n        \\\"question_15\\\": \\\"{{ machine_inspection.question_15 }}\\\",\\n        \\\"question_16\\\": \\\"{{ machine_inspection.question_16 }}\\\",\\n        \\\"question_17\\\": \\\"{{ machine_inspection.question_17 }}\\\",\\n        \\\"e_c_date\\\": \\\"{{ machine_inspection.e_c_date.strftime('%Y-%m-%d %H:%M:%S') if machine_inspection.e_c_date else '' }}\\\",\\n        \\\"question_7\\\": \\\"{{ machine_inspection.question_7 }}\\\",\\n        \\\"question_8\\\": \\\"{{ machine_inspection.question_8 }}\\\",\\n        \\\"question_9\\\": \\\"{{ machine_inspection.question_9 }}\\\",\\n        \\\"question_10\\\": \\\"{{ machine_inspection.question_10 }}\\\",\\n        \\\"question_11\\\": \\\"{{ machine_inspection.question_11 }}\\\",\\n        \\\"question_12\\\": \\\"{{ machine_inspection.question_12 }}\\\",\\n        \\\"question_13\\\": \\\"{{ machine_inspection.question_13 }}\\\",\\n        \\\"question_14\\\": \\\"{{ machine_inspection.question_14 }}\\\",\\n        \\\"question_18\\\": \\\"{{ machine_inspection.question_18 }}\\\",\\n        \\\"heat_exchanger\\\": \\\"{{ 1 if machine_inspection.heat_exchanger else 0 }}\\\",\\n        \\\"cooling_ring\\\": \\\"{{ 1 if machine_inspection.cooling_ring }}\\\",\\n        \\\"mould_cooling_manifold\\\": \\\"{{ 1 if machine_inspection.mould_cooling_manifold else 0 }}\\\",\\n        \\\"question_19\\\": \\\"{{ machine_inspection.question_19 }}\\\",\\n        \\\"cable_size\\\": \\\"{{ 1 if machine_inspection.cable_size else 0 }}\\\",\\n        \\\"back_up_fuses_for_incoming_supply\\\": \\\"{{ 1 if machine_inspection.back_up_fuses_for_incoming_supply else 0 }}\\\",\\n        \\\"question_20\\\": \\\"{{ machine_inspection.question_20 }}\\\",\\n        \\\"question_21\\\": \\\"{{ machine_inspection.question_21 }}\\\",\\n        \\\"control_panel\\\": \\\"{{ 1 if machine_inspection.control_panel else 0 }}\\\",\\n        \\\"pendent\\\": \\\"{{ 1 if machine_inspection.pendent else 0 }}\\\",\\n        \\\"junction_box\\\": \\\"{{ 1 if machine_inspection.junction_box else 0 }}\\\",\\n        \\\"limit_switch\\\": \\\"{{ 1 if machine_inspection.limit_switch else 0 }}\\\",\\n        \\\"question_22\\\": \\\"{{ machine_inspection.question_22 }}\\\",\\n        \\\"question_23\\\": \\\"{{ machine_inspection.question_23 }}\\\",\\n        \\\"question_24\\\": \\\"{{ machine_inspection.question_24 }}\\\",\\n        \\\"question_25\\\": \\\"{{ machine_inspection.question_25 }}\\\",\\n        \\\"question_26\\\": \\\"{{ machine_inspection.question_26 }}\\\",\\n        \\\"question_27\\\": \\\"{{ machine_inspection.question_27 }}\\\",\\n        \\\"question_28\\\": \\\"{{ machine_inspection.question_28 }}\\\",\\n        \\\"question_29\\\": \\\"{{ machine_inspection.question_29 }}\\\",\\n        \\\"question_30\\\": \\\"{{ machine_inspection.question_30 }}\\\"\\n}\",\"variable_path_for_output\":\"machine_inspection_doc\"}",
+    "data": "{\"node_label\":\"Create Machine Inspection\",\"execute_current_node_as_user\":\"\",\"submit\":true,\"docTypeJson\":\"{\\n        \\\"doctype\\\": \\\"Machine Inspection\\\",\\n        \\\"service_call\\\": \\\"{{ doc.name }}\\\",\\n        \\\"serial_no\\\": \\\"{{ doc.serial_no }}\\\",\\n        \\\"customer\\\": \\\"{{ doc.customer }}\\\",\\n        \\\"mc_model\\\": \\\"{{ machine_inspection.mc_model }}\\\",\\n        \\\"question_1\\\": \\\"{{ machine_inspection.question_1 }}\\\",\\n        \\\"question_2\\\": \\\"{{ machine_inspection.question_2 }}\\\",\\n        \\\"question_4\\\": \\\"{{ machine_inspection.question_4 }}\\\",\\n        \\\"question_5\\\": \\\"{{ machine_inspection.question_5 }}\\\",\\n        \\\"question_6\\\": \\\"{{ machine_inspection.question_6 }}\\\",\\n        \\\"question_15\\\": \\\"{{ machine_inspection.question_15 }}\\\",\\n        \\\"question_16\\\": \\\"{{ machine_inspection.question_16 }}\\\",\\n        \\\"question_17\\\": \\\"{{ machine_inspection.question_17 }}\\\",\\n        \\\"e_c_date\\\": \\\"{{ machine_inspection.e_c_date if machine_inspection.e_c_date else '' }}\\\",\\n        \\\"question_7\\\": \\\"{{ machine_inspection.question_7 }}\\\",\\n        \\\"question_8\\\": \\\"{{ machine_inspection.question_8 }}\\\",\\n        \\\"question_9\\\": \\\"{{ machine_inspection.question_9 }}\\\",\\n        \\\"question_10\\\": \\\"{{ machine_inspection.question_10 }}\\\",\\n        \\\"question_11\\\": \\\"{{ machine_inspection.question_11 }}\\\",\\n        \\\"question_12\\\": \\\"{{ machine_inspection.question_12 }}\\\",\\n        \\\"question_13\\\": \\\"{{ machine_inspection.question_13 }}\\\",\\n        \\\"question_14\\\": \\\"{{ machine_inspection.question_14 }}\\\",\\n        \\\"question_18\\\": \\\"{{ machine_inspection.question_18 }}\\\",\\n        \\\"heat_exchanger\\\": \\\"{{ 1 if machine_inspection.heat_exchanger else 0 }}\\\",\\n        \\\"cooling_ring\\\": \\\"{{ 1 if machine_inspection.cooling_ring }}\\\",\\n        \\\"mould_cooling_manifold\\\": \\\"{{ 1 if machine_inspection.mould_cooling_manifold else 0 }}\\\",\\n        \\\"question_19\\\": \\\"{{ machine_inspection.question_19 }}\\\",\\n        \\\"cable_size\\\": \\\"{{ 1 if machine_inspection.cable_size else 0 }}\\\",\\n        \\\"back_up_fuses_for_incoming_supply\\\": \\\"{{ 1 if machine_inspection.back_up_fuses_for_incoming_supply else 0 }}\\\",\\n        \\\"question_20\\\": \\\"{{ machine_inspection.question_20 }}\\\",\\n        \\\"question_21\\\": \\\"{{ machine_inspection.question_21 }}\\\",\\n        \\\"control_panel\\\": \\\"{{ 1 if machine_inspection.control_panel else 0 }}\\\",\\n        \\\"pendent\\\": \\\"{{ 1 if machine_inspection.pendent else 0 }}\\\",\\n        \\\"junction_box\\\": \\\"{{ 1 if machine_inspection.junction_box else 0 }}\\\",\\n        \\\"limit_switch\\\": \\\"{{ 1 if machine_inspection.limit_switch else 0 }}\\\",\\n        \\\"question_22\\\": \\\"{{ machine_inspection.question_22 }}\\\",\\n        \\\"question_23\\\": \\\"{{ machine_inspection.question_23 }}\\\",\\n        \\\"question_24\\\": \\\"{{ machine_inspection.question_24 }}\\\",\\n        \\\"question_25\\\": \\\"{{ machine_inspection.question_25 }}\\\",\\n        \\\"question_26\\\": \\\"{{ machine_inspection.question_26 }}\\\",\\n        \\\"question_27\\\": \\\"{{ machine_inspection.question_27 }}\\\",\\n        \\\"question_28\\\": \\\"{{ machine_inspection.question_28 }}\\\",\\n        \\\"question_29\\\": \\\"{{ machine_inspection.question_29 }}\\\",\\n        \\\"question_30\\\": \\\"{{ machine_inspection.question_30 }}\\\"\\n}\",\"variable_path_for_output\":\"machine_inspection_doc\"}",
     "element_type": "Action",
     "id": "51w7xrwDqH1OlhWOuZgSA",
     "parent": "Installation Approval",
     "parentfield": "funnel_definition",
     "parenttype": "Funnel",
     "position": "{\"x\":555,\"y\":90}",
-    "source": null,
-    "sourcehandle": null,
-    "target": null,
-    "targethandle": null,
-    "type": "create_doctype"
-   },
-   {
-    "data": "{\"node_label\":\"Create Machine Inspection\",\"execute_current_node_as_user\":\"\",\"submit\":true,\"docTypeJson\":\"{\\n        \\\"doctype\\\": \\\"Problem Complete\\\",\\n        \\\"service_call\\\": \\\"{{ doc.name }}\\\",\\n        \\\"serial_no\\\": \\\"{{ doc.serial_no }}\\\",\\n        \\\"customer\\\": \\\"{{ doc.customer }}\\\",\\n        \\\"mc_model\\\": \\\"{{ machine_inspection.mc_model }}\\\",\\n        \\\"question_1\\\": \\\"{{ machine_inspection.question_1 }}\\\",\\n        \\\"question_2\\\": \\\"{{ machine_inspection.question_2 }}\\\",\\n        \\\"question_4\\\": \\\"{{ machine_inspection.question_4 }}\\\",\\n        \\\"question_5\\\": \\\"{{ machine_inspection.question_5 }}\\\",\\n        \\\"question_6\\\": \\\"{{ machine_inspection.question_6 }}\\\",\\n        \\\"question_15\\\": \\\"{{ machine_inspection.question_15 }}\\\",\\n        \\\"question_16\\\": \\\"{{ machine_inspection.question_16 }}\\\",\\n        \\\"question_17\\\": \\\"{{ machine_inspection.question_17 }}\\\",\\n        \\\"e_c_date\\\": \\\"{{ machine_inspection.e_c_date.strftime('%Y-%m-%d %H:%M:%S') if machine_inspection.e_c_date else '' }}\\\",\\n        \\\"question_7\\\": \\\"{{ machine_inspection.question_7 }}\\\",\\n        \\\"question_8\\\": \\\"{{ machine_inspection.question_8 }}\\\",\\n        \\\"question_9\\\": \\\"{{ machine_inspection.question_9 }}\\\",\\n        \\\"question_10\\\": \\\"{{ machine_inspection.question_10 }}\\\",\\n        \\\"question_11\\\": \\\"{{ machine_inspection.question_11 }}\\\",\\n        \\\"question_12\\\": \\\"{{ machine_inspection.question_12 }}\\\",\\n        \\\"question_13\\\": \\\"{{ machine_inspection.question_13 }}\\\",\\n        \\\"question_14\\\": \\\"{{ machine_inspection.question_14 }}\\\",\\n        \\\"question_18\\\": \\\"{{ machine_inspection.question_18 }}\\\",\\n        \\\"heat_exchanger\\\": \\\"{{ 1 if machine_inspection.heat_exchanger else 0 }}\\\",\\n        \\\"cooling_ring\\\": \\\"{{ 1 if machine_inspection.cooling_ring }}\\\",\\n        \\\"mould_cooling_manifold\\\": \\\"{{ 1 if machine_inspection.mould_cooling_manifold else 0 }}\\\",\\n        \\\"question_19\\\": \\\"{{ machine_inspection.question_19 }}\\\",\\n        \\\"cable_size\\\": \\\"{{ 1 if machine_inspection.cable_size else 0 }}\\\",\\n        \\\"back_up_fuses_for_incoming_supply\\\": \\\"{{ 1 if machine_inspection.back_up_fuses_for_incoming_supply else 0 }}\\\",\\n        \\\"question_20\\\": \\\"{{ machine_inspection.question_20 }}\\\",\\n        \\\"question_21\\\": \\\"{{ machine_inspection.question_21 }}\\\",\\n        \\\"control_panel\\\": \\\"{{ 1 if machine_inspection.control_panel else 0 }}\\\",\\n        \\\"pendent\\\": \\\"{{ 1 if machine_inspection.pendent else 0 }}\\\",\\n        \\\"junction_box\\\": \\\"{{ 1 if machine_inspection.junction_box else 0 }}\\\",\\n        \\\"limit_switch\\\": \\\"{{ 1 if machine_inspection.limit_switch else 0 }}\\\",\\n        \\\"question_22\\\": \\\"{{ machine_inspection.question_22 }}\\\",\\n        \\\"question_23\\\": \\\"{{ machine_inspection.question_23 }}\\\",\\n        \\\"question_24\\\": \\\"{{ machine_inspection.question_24 }}\\\",\\n        \\\"question_25\\\": \\\"{{ machine_inspection.question_25 }}\\\",\\n        \\\"question_26\\\": \\\"{{ machine_inspection.question_26 }}\\\",\\n        \\\"question_27\\\": \\\"{{ machine_inspection.question_27 }}\\\",\\n        \\\"question_28\\\": \\\"{{ machine_inspection.question_28 }}\\\",\\n        \\\"question_29\\\": \\\"{{ machine_inspection.question_29 }}\\\",\\n        \\\"question_30\\\": \\\"{{ machine_inspection.question_30 }}\\\"\\n}\",\"variable_path_for_output\":\"problem_complete_doc\"}",
-    "element_type": "Action",
-    "id": "GxSx3rYxcSH4h6pazinMN",
-    "parent": "Installation Approval",
-    "parentfield": "funnel_definition",
-    "parenttype": "Funnel",
-    "position": "{\"x\":1200,\"y\":390}",
     "source": null,
     "sourcehandle": null,
     "target": null,
@@ -595,21 +595,7 @@
     "type": "update_doctype"
    },
    {
-    "data": null,
-    "element_type": "edge",
-    "id": "reactflow__edge-z3fC3KTJ---qfqgDgAS_cInspection Complete-BmYIGMl1xNmPjstlqx-azinput",
-    "parent": "Installation Approval",
-    "parentfield": "funnel_definition",
-    "parenttype": "Funnel",
-    "position": null,
-    "source": "z3fC3KTJ---qfqgDgAS_c",
-    "sourcehandle": "Inspection Complete",
-    "target": "BmYIGMl1xNmPjstlqx-az",
-    "targethandle": "input",
-    "type": "smoothstep"
-   },
-   {
-    "data": "{\"height\":999.9608764648438,\"width\":350,\"node_label\":\"Trial Nodes\",\"submit\":true,\"variable_path_for_output\":\"\"}",
+    "data": "{\"height\":999.9452848684389,\"width\":350.0000650023235,\"node_label\":\"Trial Nodes\",\"submit\":true,\"variable_path_for_output\":\"\"}",
     "element_type": "Action",
     "id": "pOE-7s2B0hddcNTHQgsp4",
     "parent": "Installation Approval",
@@ -649,20 +635,6 @@
     "target": "N5SovT5X3eSBzdQZnAEIy",
     "targethandle": "input",
     "type": "smoothstep"
-   },
-   {
-    "data": "{\"node_label\":\"Machine Inspection Changes\",\"python_code\":\"machine_inspection = variables.get(\\\"machine_inspection\\\")\\n\\nif machine_inspection and machine_inspection.get(\\\"e_c_date\\\"):\\n    e_c_date = datetime.fromisoformat(machine_inspection.get(\\\"e_c_date\\\")).strftime('%Y-%m-%d %H:%M:%S')\",\"skip_queue_and_execute_immediately\":false,\"execute_current_node_as_user\":\"\",\"submit\":true,\"variable_path_for_output\":\"\"}",
-    "element_type": "Action",
-    "id": "0MJfTyGHWZkCxFnZsk2N7",
-    "parent": "Installation Approval",
-    "parentfield": "funnel_definition",
-    "parenttype": "Funnel",
-    "position": "{\"x\":555,\"y\":420}",
-    "source": null,
-    "sourcehandle": null,
-    "target": null,
-    "targethandle": null,
-    "type": "exec_python"
    },
    {
     "data": null,
@@ -759,20 +731,6 @@
     "source": "dJRpj46nDQOcpZZ_ZkzKv",
     "sourcehandle": "Site Readiness",
     "target": "ddxyR24LNO5XJCqSfHZLl",
-    "targethandle": "input",
-    "type": "smoothstep"
-   },
-   {
-    "data": null,
-    "element_type": "edge",
-    "id": "reactflow__edge-ddxyR24LNO5XJCqSfHZLloutput-z3fC3KTJ---qfqgDgAS_cinput",
-    "parent": "Installation Approval",
-    "parentfield": "funnel_definition",
-    "parenttype": "Funnel",
-    "position": null,
-    "source": "ddxyR24LNO5XJCqSfHZLl",
-    "sourcehandle": "output",
-    "target": "z3fC3KTJ---qfqgDgAS_c",
     "targethandle": "input",
     "type": "smoothstep"
    },
@@ -1143,6 +1101,20 @@
    {
     "data": null,
     "element_type": "edge",
+    "id": "reactflow__edge-ddxyR24LNO5XJCqSfHZLloutput-9VTUFmTkKFONXR0uRpnTpinput",
+    "parent": "Installation Approval",
+    "parentfield": "funnel_definition",
+    "parenttype": "Funnel",
+    "position": null,
+    "source": "ddxyR24LNO5XJCqSfHZLl",
+    "sourcehandle": "output",
+    "target": "9VTUFmTkKFONXR0uRpnTp",
+    "targethandle": "input",
+    "type": "smoothstep"
+   },
+   {
+    "data": null,
+    "element_type": "edge",
     "id": "reactflow__edge-sVHLyRgivMz7p20gj5c1jClosed-HvkkLT_kTOJW9Yw8VCHhfinput",
     "parent": "Installation Approval",
     "parentfield": "funnel_definition",
@@ -1153,15 +1125,29 @@
     "target": "HvkkLT_kTOJW9Yw8VCHhf",
     "targethandle": "input",
     "type": "smoothstep"
+   },
+   {
+    "data": null,
+    "element_type": "edge",
+    "id": "reactflow__edge-9VTUFmTkKFONXR0uRpnTpInspection Test-BmYIGMl1xNmPjstlqx-azinput",
+    "parent": "Installation Approval",
+    "parentfield": "funnel_definition",
+    "parenttype": "Funnel",
+    "position": null,
+    "source": "9VTUFmTkKFONXR0uRpnTp",
+    "sourcehandle": "Inspection Test",
+    "target": "BmYIGMl1xNmPjstlqx-az",
+    "targethandle": "input",
+    "type": "smoothstep"
    }
   ],
   "funnel_name": "Installation Approval",
   "funnel_type": "Private",
-  "modified": "2025-02-26 13:33:58.130446",
+  "modified": "2025-02-26 21:13:45.093555",
   "module": "",
   "name": "Installation Approval",
   "status": "published",
   "variable_list": "[]",
-  "viewport": "{\"x\":-698.0446065088527,\"y\":225.83899761900943,\"zoom\":1.4271981698757243}"
+  "viewport": "{\"x\":213.52431278280153,\"y\":204.3180774725067,\"zoom\":0.7936194117600551}"
  }
 ]
