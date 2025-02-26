@@ -37,7 +37,7 @@
    "fieldname": "indent_type",
    "fieldtype": "Select",
    "label": "Indent Type",
-   "options": "\nMaterial Installation\nWithin Warranty Period\nWithout Warranty Period\nShort Indent\nWrong Supply"
+   "options": "\nInstallation\nWithin Warranty Period\nWithout Warranty Period\nShort Supply\nWrong Supply\nTransit Damage\nFOC"
   },
   {
    "fieldname": "sum_of_list_price",
@@ -147,7 +147,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-08 09:26:01.713970",
+ "modified": "2025-02-26 11:24:27.427922",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Indent",

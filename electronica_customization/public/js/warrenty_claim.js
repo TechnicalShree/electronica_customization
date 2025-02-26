@@ -46,18 +46,24 @@ frappe.ui.form.on("Warranty Claim", {
     },
     refresh: function (frm) {
         // Add custom button for creating indent
-        frm.add_custom_button(__("Create Indent"), function () {
+        frm.add_custom_button(__("Indent"), function () {
             frappe.model.open_mapped_doc({
                 method: "electronica_customization.api.service_call.create_indent",
                 frm: frm,
             });
-        });
-        frm.add_custom_button(__("Create Quotation"), function () {
+        }, 'Create');
+        frm.add_custom_button(__("Quotation"), function () {
             frappe.model.open_mapped_doc({
                 method: "electronica_customization.api.service_call.create_quotation",
                 frm: frm,
             });
-        });
+        }, 'Create');
+        frm.add_custom_button(__("Problem Observed"), function () {
+            frappe.model.open_mapped_doc({
+                method: "electronica_customization.api.service_call.create_problem_observed",
+                frm: frm,
+            });
+        }, 'Create');
 
         // Set field properties and update status options on refresh
         setCustomInstallationReadOnly(frm);
