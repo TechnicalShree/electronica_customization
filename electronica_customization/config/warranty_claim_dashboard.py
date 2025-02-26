@@ -1,4 +1,7 @@
-def get_dashboard_data(data):
+from frappe import _
+
+
+def get_data(data):
     return {
         "fieldname": "service_call",
         "non_standard_fieldnames": {
@@ -7,14 +10,15 @@ def get_dashboard_data(data):
         },
         "transactions": [
             {
+                "label": _("Service Forms"),
                 "items": [
-                    "Indent",
-                    "Quotation",
                     "Mould Trial",
-                    "Maintenance Visit",
                     "Problem Observed",
                     "Machine Inspection",
-                ]
+                    "Customer Training",
+                ],
             },
+            {"label": _("Material Requests"), "items": ["Indent"]},
+            {"label": _("Service Visits"), "items": ["Maintenance Visit"]},
         ],
     }
