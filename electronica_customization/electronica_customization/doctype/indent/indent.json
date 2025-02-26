@@ -9,11 +9,12 @@
   "service_call",
   "custom_is_installation",
   "indent_type",
+  "is_copy_of_lr_with_remark_attached",
+  "lr_copy",
   "sum_of_list_price",
   "sum_of_total_price",
   "custom_problem_observed",
   "reason",
-  "indent_category",
   "column_break_arsd",
   "status",
   "dispatch_date",
@@ -54,12 +55,6 @@
    "fieldtype": "Select",
    "label": "Reason",
    "options": "\nMaterial Not Received\nMaterial Not Dispatch\nnone"
-  },
-  {
-   "fieldname": "indent_category",
-   "fieldtype": "Select",
-   "label": "Indent Category",
-   "options": "\nREPLACEMENT\nSHORT SUPPLY\nTRANSIT DAMAGE\nFOC\nWRONG SUPPLY"
   },
   {
    "fieldname": "issue_category",
@@ -143,11 +138,26 @@
    "in_list_view": 1,
    "label": "Problem Observed",
    "reqd": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.indent_type=='Transit Damage'",
+   "fieldname": "is_copy_of_lr_with_remark_attached",
+   "fieldtype": "Check",
+   "label": "Is Copy of LR with remark Attached",
+   "mandatory_depends_on": "eval:doc.is_copy_of_lr_with_remark_attached==1"
+  },
+  {
+   "depends_on": "eval:doc.indent_type=='Transit Damage'",
+   "fieldname": "lr_copy",
+   "fieldtype": "Attach",
+   "label": "LR Copy",
+   "mandatory_depends_on": "eval:(doc.indent_type=='Transit Damage') && (doc.is_copy_of_lr_with_remark_attached==1)"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-26 11:24:27.427922",
+ "modified": "2025-02-26 14:08:49.835577",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Indent",
