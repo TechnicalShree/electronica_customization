@@ -7,6 +7,7 @@
  "field_order": [
   "product_family",
   "e_c_date",
+  "customer",
   "customer_name",
   "question_1",
   "question_2",
@@ -100,6 +101,7 @@
    "options": "Product Family Master"
   },
   {
+   "fetch_from": "customer.customer_name",
    "fieldname": "customer_name",
    "fieldtype": "Data",
    "label": "Customer Name"
@@ -568,11 +570,17 @@
    "fieldname": "e_c_date",
    "fieldtype": "Datetime",
    "label": "E&C Date"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-20 00:35:18.273003",
+ "modified": "2025-02-26 23:15:15.160119",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Customer Training",
