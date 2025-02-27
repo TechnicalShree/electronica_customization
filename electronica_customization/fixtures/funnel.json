@@ -139,7 +139,7 @@
     "parent": "Installation Approval",
     "parentfield": "funnel_definition",
     "parenttype": "Funnel",
-    "position": "{\"x\":255,\"y\":60}",
+    "position": "{\"x\":270,\"y\":540}",
     "source": null,
     "sourcehandle": null,
     "target": null,
@@ -153,7 +153,7 @@
     "parent": "Installation Approval",
     "parentfield": "funnel_definition",
     "parenttype": "Funnel",
-    "position": "{\"x\":255,\"y\":480}",
+    "position": "{\"x\":255,\"y\":60}",
     "source": null,
     "sourcehandle": null,
     "target": null,
@@ -1101,14 +1101,14 @@
    {
     "data": null,
     "element_type": "edge",
-    "id": "reactflow__edge-ddxyR24LNO5XJCqSfHZLloutput-9VTUFmTkKFONXR0uRpnTpinput",
+    "id": "reactflow__edge-ddxyR24LNO5XJCqSfHZLloutput-z3fC3KTJ---qfqgDgAS_cinput",
     "parent": "Installation Approval",
     "parentfield": "funnel_definition",
     "parenttype": "Funnel",
     "position": null,
     "source": "ddxyR24LNO5XJCqSfHZLl",
     "sourcehandle": "output",
-    "target": "9VTUFmTkKFONXR0uRpnTp",
+    "target": "z3fC3KTJ---qfqgDgAS_c",
     "targethandle": "input",
     "type": "smoothstep"
    },
@@ -1129,13 +1129,13 @@
    {
     "data": null,
     "element_type": "edge",
-    "id": "reactflow__edge-9VTUFmTkKFONXR0uRpnTpInspection Test-BmYIGMl1xNmPjstlqx-azinput",
+    "id": "reactflow__edge-z3fC3KTJ---qfqgDgAS_cInspection Complete-BmYIGMl1xNmPjstlqx-azinput",
     "parent": "Installation Approval",
     "parentfield": "funnel_definition",
     "parenttype": "Funnel",
     "position": null,
-    "source": "9VTUFmTkKFONXR0uRpnTp",
-    "sourcehandle": "Inspection Test",
+    "source": "z3fC3KTJ---qfqgDgAS_c",
+    "sourcehandle": "Inspection Complete",
     "target": "BmYIGMl1xNmPjstlqx-az",
     "targethandle": "input",
     "type": "smoothstep"
@@ -1143,11 +1143,11 @@
   ],
   "funnel_name": "Installation Approval",
   "funnel_type": "Private",
-  "modified": "2025-02-27 20:19:52.485747",
+  "modified": "2025-02-27 20:21:16.428044",
   "module": "",
   "name": "Installation Approval",
   "status": "published",
   "variable_list": "[]",
-  "viewport": "{\"x\":191.2269597039516,\"y\":186.20652821868305,\"zoom\":0.8219943422224185}"
+  "viewport": "{\"x\":193.26677788970505,\"y\":299.28261465958155,\"zoom\":0.598310965010234}"
  }
 ]
