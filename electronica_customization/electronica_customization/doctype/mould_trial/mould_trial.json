@@ -6,11 +6,11 @@
  "engine": "InnoDB",
  "field_order": [
   "name_of_service_engineer",
-  "machine_serial_no",
+  "machine_model",
   "service_call",
   "column_break_cqgs",
   "regionlocation",
-  "machine_model",
+  "serial_no",
   "section_break_vqzd",
   "screw_dia",
   "mold_size_height_mm",
@@ -86,12 +86,6 @@
    "fieldname": "name_of_service_engineer",
    "fieldtype": "Data",
    "label": "Name of Service Engineer"
-  },
-  {
-   "fieldname": "machine_serial_no",
-   "fieldtype": "Link",
-   "label": "Machine Serial No.",
-   "options": "Serial No"
   },
   {
    "fieldname": "column_break_cqgs",
@@ -453,11 +447,17 @@
    "fieldname": "actual_back_pressure_bar",
    "fieldtype": "Float",
    "label": "Actual Back Pressure (Bar)"
+  },
+  {
+   "fieldname": "serial_no",
+   "fieldtype": "Link",
+   "label": "Serial No",
+   "options": "Serial No"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-19 22:51:15.054090",
+ "modified": "2025-02-27 21:43:23.618279",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Mould Trial",
