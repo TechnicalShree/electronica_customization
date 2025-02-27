@@ -5,7 +5,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "product_family",
+  "machine_model",
   "e_c_date",
   "customer",
   "customer_name",
@@ -94,12 +94,6 @@
   "remark"
  ],
  "fields": [
-  {
-   "fieldname": "product_family",
-   "fieldtype": "Link",
-   "label": "Product Family",
-   "options": "Product Family Master"
-  },
   {
    "fetch_from": "customer.customer_name",
    "fieldname": "customer_name",
@@ -576,11 +570,17 @@
    "fieldtype": "Link",
    "label": "Customer",
    "options": "Customer"
+  },
+  {
+   "fieldname": "machine_model",
+   "fieldtype": "Link",
+   "label": "Machine Model",
+   "options": "Item Model Master"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-26 23:15:15.160119",
+ "modified": "2025-02-27 20:38:22.425771",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Customer Training",

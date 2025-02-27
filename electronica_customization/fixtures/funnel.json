@@ -1,7 +1,7 @@
 [
  {
   "archived": 0,
-  "assistant_form_fields": "{\n  \"suggessionremark\": {\n    \"type\": \"string\",\n    \"label\": \"Suggession/Remark\"\n  },\n  \"remark\": {\n    \"type\": \"string\",\n    \"label\": \"Remark\"\n  }\n}",
+  "assistant_form_fields": "{\n  \"suggessionremark\": {\n    \"type\": \"string\",\n    \"label\": \"Suggession/Remark\"\n  },\n  \"remark\": {\n    \"type\": \"string\",\n    \"label\": \"Remark\"\n  },\n  \"customer_name\": {\n    \"type\": \"string\",\n    \"label\": \"Customer Name\"\n  }\n}",
   "docstatus": 0,
   "doctype": "Funnel",
   "funnel_access": [],
@@ -147,7 +147,7 @@
     "type": "chatnext_assistant_multi_actions"
    },
    {
-    "data": "{\"doctype\":\"Warranty Claim\",\"doc_variable\":\"{{doc.name}}\",\"user_data\":\"{{doc.owner}}\",\"do_not_assign\":true,\"buttons\":[{\"option\":\"Inspection Complete\",\"formQuestion\":{\"info_required\":true,\"container\":{\"is_dynamic_form\":false,\"prefill_data\":\"\",\"answer_var\":\"machine_inspection\",\"selected_form\":{\"name\":\"dsk62v3p17\",\"label\":\"Machine Inspection\"}}}}],\"open_chatnext_assistant\":true,\"output_handles_array_field\":\"buttons\",\"output_handle_key_field\":\"option\",\"submit\":true,\"variable_path_for_output\":\"\"}",
+    "data": "{\"doctype\":\"Warranty Claim\",\"doc_variable\":\"{{doc.name}}\",\"user_data\":\"{{doc.owner}}\",\"do_not_assign\":true,\"buttons\":[{\"option\":\"Inspection Complete\",\"formQuestion\":{\"info_required\":true,\"container\":{\"is_dynamic_form\":false,\"prefill_data\":\"{\\n\\\"serial_no\\\": \\\"{{doc.serial_no}}\\\",\\n\\\"mc_model\\\": \\\"{{doc.custom_machine_model}}\\\"\\n}\",\"answer_var\":\"machine_inspection\",\"selected_form\":{\"name\":\"dsk62v3p17\",\"label\":\"Machine Inspection\"}}}}],\"open_chatnext_assistant\":true,\"output_handles_array_field\":\"buttons\",\"output_handle_key_field\":\"option\",\"submit\":true,\"variable_path_for_output\":\"\"}",
     "element_type": "Action",
     "id": "z3fC3KTJ---qfqgDgAS_c",
     "parent": "Installation Approval",
@@ -217,7 +217,7 @@
     "type": "chatnext_assistant_multi_actions"
    },
    {
-    "data": "{\"doctype\":\"Warranty Claim\",\"doc_variable\":\"{{doc.name}}\",\"user_data\":\"System Manager\",\"do_not_assign\":false,\"buttons\":[{\"option\":\"Training Complete\",\"formQuestion\":{\"info_required\":true,\"container\":{\"is_dynamic_form\":false,\"prefill_data\":\"{\\n\\\"customer\\\": \\\"{{doc.customer}}\\\".\\n\\\"serial_no\\\": \\\"{{doc.serial_no}}\\\",\\n\\\"customer_name\\\": \\\"{{doc.customer_name}}\\\"\\n}\",\"answer_var\":\"customer_training\",\"selected_form\":{\"name\":\"469f687une\",\"label\":\"Customer Training\"}}}}],\"open_chatnext_assistant\":true,\"output_handles_array_field\":\"buttons\",\"output_handle_key_field\":\"option\",\"submit\":true,\"variable_path_for_output\":\"\"}",
+    "data": "{\"doctype\":\"Warranty Claim\",\"doc_variable\":\"{{doc.name}}\",\"user_data\":\"System Manager\",\"do_not_assign\":false,\"buttons\":[{\"option\":\"Training Complete\",\"formQuestion\":{\"info_required\":true,\"container\":{\"is_dynamic_form\":false,\"prefill_data\":\"{\\n\\\"customer\\\": \\\"{{doc.customer}}\\\",\\n\\\"serial_no\\\": \\\"{{doc.serial_no}}\\\",\\n\\\"machine_model\\\": \\\"{{doc.custom_machine_model}}\\\",\\n\\\"customer_name\\\": \\\"{{doc.customer_name}}\\\"\\n}\",\"answer_var\":\"customer_training\",\"selected_form\":{\"name\":\"469f687une\",\"label\":\"Customer Training\"}}}}],\"open_chatnext_assistant\":true,\"output_handles_array_field\":\"buttons\",\"output_handle_key_field\":\"option\",\"submit\":true,\"variable_path_for_output\":\"\"}",
     "element_type": "Action",
     "id": "t32OfNB0q6UicrO4N2Ete",
     "parent": "Installation Approval",
@@ -259,7 +259,7 @@
     "type": "exec_python"
    },
    {
-    "data": "{\"node_label\":\"Customer Training Changes\",\"python_code\":\"pass\\n\",\"skip_queue_and_execute_immediately\":false,\"execute_current_node_as_user\":\"\",\"submit\":true,\"variable_path_for_output\":\"\"}",
+    "data": "{\"node_label\":\"Customer Training Changes\",\"python_code\":\"customer_training = variables.get(\\\"machine_inspection\\\")\\n\\nif customer_training and customer_training.get(\\\"e_c_date\\\"):\\n    variables['customer_training']['e_c_date'] = frappe.utils.format_datetime(frappe.utils.get_datetime(customer_training.get(\\\"e_c_date\\\")), \\\"yyyy-MM-dd HH:mm:ss\\\")\",\"skip_queue_and_execute_immediately\":false,\"execute_current_node_as_user\":\"\",\"submit\":true,\"variable_path_for_output\":\"\"}",
     "element_type": "Action",
     "id": "zvfsmOmhFOYrG-qXCp2at",
     "parent": "Installation Approval",
@@ -329,7 +329,7 @@
     "type": "chatnext_assistant_form_question"
    },
    {
-    "data": "{\"node_label\":\"Serivce Call Workflow\",\"submit\":true,\"height\":999.9843681716519,\"width\":2499.9609204291296,\"variable_path_for_output\":\"\"}",
+    "data": "{\"node_label\":\"Serivce Call Workflow\",\"submit\":true,\"height\":999.984397915922,\"width\":2499.9610494082667,\"variable_path_for_output\":\"\"}",
     "element_type": "Action",
     "id": "wnTD2GMQE57j9GfsEyXEQ",
     "parent": "Installation Approval",
@@ -1101,20 +1101,6 @@
    {
     "data": null,
     "element_type": "edge",
-    "id": "reactflow__edge-ddxyR24LNO5XJCqSfHZLloutput-z3fC3KTJ---qfqgDgAS_cinput",
-    "parent": "Installation Approval",
-    "parentfield": "funnel_definition",
-    "parenttype": "Funnel",
-    "position": null,
-    "source": "ddxyR24LNO5XJCqSfHZLl",
-    "sourcehandle": "output",
-    "target": "z3fC3KTJ---qfqgDgAS_c",
-    "targethandle": "input",
-    "type": "smoothstep"
-   },
-   {
-    "data": null,
-    "element_type": "edge",
     "id": "reactflow__edge-sVHLyRgivMz7p20gj5c1jClosed-HvkkLT_kTOJW9Yw8VCHhfinput",
     "parent": "Installation Approval",
     "parentfield": "funnel_definition",
@@ -1123,6 +1109,20 @@
     "source": "sVHLyRgivMz7p20gj5c1j",
     "sourcehandle": "Closed",
     "target": "HvkkLT_kTOJW9Yw8VCHhf",
+    "targethandle": "input",
+    "type": "smoothstep"
+   },
+   {
+    "data": null,
+    "element_type": "edge",
+    "id": "reactflow__edge-ddxyR24LNO5XJCqSfHZLloutput-z3fC3KTJ---qfqgDgAS_cinput",
+    "parent": "Installation Approval",
+    "parentfield": "funnel_definition",
+    "parenttype": "Funnel",
+    "position": null,
+    "source": "ddxyR24LNO5XJCqSfHZLl",
+    "sourcehandle": "output",
+    "target": "z3fC3KTJ---qfqgDgAS_c",
     "targethandle": "input",
     "type": "smoothstep"
    },
@@ -1143,11 +1143,11 @@
   ],
   "funnel_name": "Installation Approval",
   "funnel_type": "Private",
-  "modified": "2025-02-27 20:21:16.428044",
+  "modified": "2025-02-27 21:23:49.546168",
   "module": "",
   "name": "Installation Approval",
   "status": "published",
   "variable_list": "[]",
-  "viewport": "{\"x\":193.26677788970505,\"y\":299.28261465958155,\"zoom\":0.598310965010234}"
+  "viewport": "{\"x\":-208.47528073798264,\"y\":184.6508644710479,\"zoom\":1.1174821567302524}"
  }
 ]
