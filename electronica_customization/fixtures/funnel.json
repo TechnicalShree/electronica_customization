@@ -1595,7 +1595,7 @@
   "funnel_access": [],
   "funnel_definition": [
    {
-    "data": "{\"doctype\":\"Indent\",\"doc_variable\":\"{{doc.name}}\",\"user_data\":\"Branch Manager\",\"do_not_assign\":false,\"buttons\":[{\"option\":\"Approved\"},{\"option\":\"Rejected\"}],\"open_chatnext_assistant\":false,\"output_handles_array_field\":\"buttons\",\"output_handle_key_field\":\"option\",\"submit\":true,\"variable_path_for_output\":\"\"}",
+    "data": "{\"doctype\":\"Indent\",\"doc_variable\":\"{{doc.name}}\",\"user_data\":\"Branch Manager\",\"do_not_assign\":false,\"buttons\":[{\"option\":\"Approve\"},{\"option\":\"Reject\"}],\"open_chatnext_assistant\":false,\"output_handles_array_field\":\"buttons\",\"output_handle_key_field\":\"option\",\"submit\":true,\"variable_path_for_output\":\"\"}",
     "element_type": "Action",
     "id": "d2_Vt13GBPLXgLoQM05Ll",
     "parent": "Indent Approval",
@@ -1623,7 +1623,7 @@
     "type": "chatnext_assistant_multi_actions"
    },
    {
-    "data": "{\"doctype\":\"Indent\",\"doc_variable\":\"{{doc.name}}\",\"user_data\":\"Factory User\",\"do_not_assign\":false,\"buttons\":[{\"option\":\"Approved\"},{\"option\":\"Rejected\"}],\"open_chatnext_assistant\":false,\"output_handles_array_field\":\"buttons\",\"output_handle_key_field\":\"option\",\"submit\":true,\"variable_path_for_output\":\"\"}",
+    "data": "{\"doctype\":\"Indent\",\"doc_variable\":\"{{doc.name}}\",\"user_data\":\"Factory User\",\"do_not_assign\":false,\"buttons\":[{\"option\":\"Approve\"},{\"option\":\"Reject\"}],\"open_chatnext_assistant\":false,\"output_handles_array_field\":\"buttons\",\"output_handle_key_field\":\"option\",\"submit\":true,\"variable_path_for_output\":\"\"}",
     "element_type": "Action",
     "id": "2rBQTMaDJrgngifa05Y1-",
     "parent": "Indent Approval",
@@ -1665,7 +1665,7 @@
     "type": "chatnext_assistant_multi_actions"
    },
    {
-    "data": "{\"doctype\":\"Indent\",\"doc_variable\":\"{{doc.name}}\",\"user_data\":\"HO\",\"do_not_assign\":false,\"buttons\":[{\"option\":\"Approved\"},{\"option\":\"Rejected\"}],\"open_chatnext_assistant\":false,\"output_handles_array_field\":\"buttons\",\"output_handle_key_field\":\"option\",\"submit\":true,\"variable_path_for_output\":\"\"}",
+    "data": "{\"doctype\":\"Indent\",\"doc_variable\":\"{{doc.name}}\",\"user_data\":\"HO\",\"do_not_assign\":false,\"buttons\":[{\"option\":\"Approve\"},{\"option\":\"Reject\"}],\"open_chatnext_assistant\":false,\"output_handles_array_field\":\"buttons\",\"output_handle_key_field\":\"option\",\"submit\":true,\"variable_path_for_output\":\"\"}",
     "element_type": "Action",
     "id": "6k0ZlM0RGaWD5fzm3vW5b",
     "parent": "Indent Approval",
@@ -1707,7 +1707,7 @@
     "type": "smoothstep"
    },
    {
-    "data": "{\"node_label\":\"Update Indent Status\",\"execute_current_node_as_user\":\"\",\"submit\":true,\"docTypeJson\":\"{\\n\\\"doctype\\\": \\\"{{doc.doctype}}\\\",\\n\\\"name\\\": \\\"{{doc.name}}\\\",\\n\\\"status\\\": \\\"Approved by HO\\\"\\n}\"}",
+    "data": "{\"node_label\":\"Update Indent Status\",\"execute_current_node_as_user\":\"\",\"submit\":true,\"docTypeJson\":\"{\\n\\\"doctype\\\": \\\"{{doc.doctype}}\\\",\\n\\\"name\\\": \\\"{{doc.name}}\\\",\\n\\\"status\\\": \\\"Approved By HO\\\"\\n}\"}",
     "element_type": "Action",
     "id": "iweyYKZUl1NgDi9HIenpo",
     "parent": "Indent Approval",
@@ -1721,7 +1721,7 @@
     "type": "update_doctype"
    },
    {
-    "data": "{\"node_label\":\"Update Indent Status\",\"execute_current_node_as_user\":\"\",\"submit\":true,\"docTypeJson\":\"{\\n\\\"doctype\\\": \\\"{{doc.doctype}}\\\",\\n\\\"name\\\": \\\"{{doc.name}}\\\",\\n\\\"status\\\": \\\"Rejected\\\",\\n\\\"rejection_reason\\\": \\\"Rejected by Factory\\\"\\n}\"}",
+    "data": "{\"node_label\":\"Update Indent Status\",\"execute_current_node_as_user\":\"\",\"submit\":true,\"docTypeJson\":\"{\\n\\\"doctype\\\": \\\"{{doc.doctype}}\\\",\\n\\\"name\\\": \\\"{{doc.name}}\\\",\\n\\\"status\\\": \\\"Rejected By Factory\\\"\\n}\"}",
     "element_type": "Action",
     "id": "y-2ULrhqOGD_Pqq06iYpm",
     "parent": "Indent Approval",
@@ -1735,7 +1735,7 @@
     "type": "update_doctype"
    },
    {
-    "data": "{\"node_label\":\"Update Indent Status\",\"execute_current_node_as_user\":\"\",\"submit\":true,\"docTypeJson\":\"{\\n\\\"doctype\\\": \\\"{{doc.doctype}}\\\",\\n\\\"name\\\": \\\"{{doc.name}}\\\",\\n\\\"status\\\": \\\"Rejected\\\",\\n\\\"rejection_reason\\\": \\\"Rejected by HO\\\"\\n}\"}",
+    "data": "{\"node_label\":\"Update Indent Status\",\"execute_current_node_as_user\":\"\",\"submit\":true,\"docTypeJson\":\"{\\n\\\"doctype\\\": \\\"{{doc.doctype}}\\\",\\n\\\"name\\\": \\\"{{doc.name}}\\\",\\n\\\"status\\\": \\\"Rejected By HO\\\"\\n}\"}",
     "element_type": "Action",
     "id": "limfWJgxLXzglXQSxwo1j",
     "parent": "Indent Approval",
@@ -1749,7 +1749,7 @@
     "type": "update_doctype"
    },
    {
-    "data": "{\"node_label\":\"Update Indent Status\",\"execute_current_node_as_user\":\"\",\"submit\":true,\"docTypeJson\":\"{\\n\\\"doctype\\\": \\\"{{doc.doctype}}\\\",\\n\\\"name\\\": \\\"{{doc.name}}\\\",\\n\\\"status\\\": \\\"Rejected\\\",\\n\\\"rejection_reason\\\": \\\"Rejected by Branch Manager\\\"\\n}\"}",
+    "data": "{\"node_label\":\"Update Indent Status\",\"execute_current_node_as_user\":\"\",\"submit\":true,\"docTypeJson\":\"{\\n\\\"doctype\\\": \\\"{{doc.doctype}}\\\",\\n\\\"name\\\": \\\"{{doc.name}}\\\",\\n\\\"status\\\": \\\"Rejected By Branch Manager\\\"\\n}\"}",
     "element_type": "Action",
     "id": "V6MbvB7ytK4cQW-hAY7x7",
     "parent": "Indent Approval",
@@ -1777,7 +1777,7 @@
     "type": "update_doctype"
    },
    {
-    "data": "{\"node_label\":\"Update Indent Status\",\"execute_current_node_as_user\":\"\",\"submit\":true,\"docTypeJson\":\"{\\n\\\"doctype\\\": \\\"{{doc.doctype}}\\\",\\n\\\"name\\\": \\\"{{doc.name}}\\\",\\n\\\"status\\\": \\\"Factory Approval\\\"\\n}\"}",
+    "data": "{\"node_label\":\"Update Indent Status\",\"execute_current_node_as_user\":\"\",\"submit\":true,\"docTypeJson\":\"{\\n\\\"doctype\\\": \\\"{{doc.doctype}}\\\",\\n\\\"name\\\": \\\"{{doc.name}}\\\",\\n\\\"status\\\": \\\"Approved By Factory\\\"\\n}\"}",
     "element_type": "Action",
     "id": "o_HCF7yCh1ty2tMP8LtRf",
     "parent": "Indent Approval",
@@ -2101,7 +2101,7 @@
   ],
   "funnel_name": "Indent Approval",
   "funnel_type": "Private",
-  "modified": "2025-03-02 09:51:54.237875",
+  "modified": "2025-03-02 13:10:35.078663",
   "module": "",
   "name": "Indent Approval",
   "status": "published",

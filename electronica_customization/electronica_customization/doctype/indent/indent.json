@@ -17,7 +17,6 @@
   "reason",
   "column_break_arsd",
   "status",
-  "rejection_reason",
   "dispatch_date",
   "record_type",
   "transport_mode",
@@ -33,7 +32,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nOpen\nApproved By Branch Manager\nApproved by HO\nFactory Approval\nRejected\nActivated\nDispatch\nCompleted"
+   "options": "\nOpen\nApproved By Branch Manager\nApproved By HO\nApproved By Factory\nRejected By Branch Manager\nRejected By HO\nRejected By Factory\nActivated\nDispatch\nCompleted"
   },
   {
    "fieldname": "indent_type",
@@ -154,18 +153,11 @@
    "fieldtype": "Attach",
    "label": "LR Copy",
    "mandatory_depends_on": "eval:(doc.indent_type=='Transit Damage') && (doc.is_copy_of_lr_with_remark_attached==1)"
-  },
-  {
-   "depends_on": "eval:doc.status && doc.status=='Rejected'",
-   "fieldname": "rejection_reason",
-   "fieldtype": "Data",
-   "label": "Rejection Reason",
-   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-02 09:34:08.525276",
+ "modified": "2025-03-02 13:07:38.609370",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Indent",
