@@ -26,6 +26,7 @@ fixtures = [
         "or_filters": [
             ["name", "=", "Installation Approval"],
             ["name", "=", "Indent Approval"],
+            ["name", "=", "Quotation Approval"],
         ],
     },
 ]
