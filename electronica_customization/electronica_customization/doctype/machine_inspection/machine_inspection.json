@@ -6,7 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "customer",
-  "mc_model",
+  "machine_model",
   "column_break_nbec",
   "service_call",
   "serial_no",
@@ -71,11 +71,6 @@
    "fieldtype": "Link",
    "label": "Customer",
    "options": "Customer"
-  },
-  {
-   "fieldname": "mc_model",
-   "fieldtype": "Data",
-   "label": "M/C Model"
   },
   {
    "fieldname": "hourcount",
@@ -390,11 +385,17 @@
    "fieldtype": "Select",
    "label": "Check Optional features required by the customer are in proper working condition.",
    "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "machine_model",
+   "fieldtype": "Link",
+   "label": "Machine Model",
+   "options": "Item Model Master"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-13 20:29:14.942651",
+ "modified": "2025-03-02 22:19:18.166255",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Machine Inspection",

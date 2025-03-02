@@ -31,8 +31,9 @@
   },
   {
    "fieldname": "machine_model",
-   "fieldtype": "Data",
-   "label": "Machine Model"
+   "fieldtype": "Link",
+   "label": "Machine Model",
+   "options": "Item Model Master"
   },
   {
    "description": "Please insert the point for Problem Observed using bullet points. e.g.\n\n1.\n\n2.",
@@ -86,7 +87,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-26 13:41:46.644826",
+ "modified": "2025-03-02 22:21:11.864659",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Problem Observed",
