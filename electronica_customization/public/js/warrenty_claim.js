@@ -25,8 +25,16 @@ function updateStatusOptions(frm) {
 
 // Helper function to update the complaint field based on custom_is_installation
 function handleInstallationComplaint(frm) {
-    frm.set_value("complaint", !!frm.doc.custom_is_installation ? "Installation" : frm.doc?.complaint || "");
+    frm.set_value("complaint", !!frm.doc.custom_is_installation ? "Installation" : frm.doc?.complaint || null);
     frm.refresh_field("complaint");
+
+    frm.fields_dict.complaint.get_query = function () {
+        return {
+            filters: [
+                ['issue_name', !!frm.doc.custom_is_installation ? '=' : '!=', "Installation"]
+            ]
+        };
+    };
 }
 
 // Main event handlers for the Warranty Claim doctype
