@@ -7,7 +7,7 @@
  "field_order": [
   "information_section",
   "service_call",
-  "custom_is_installation",
+  "is_installation",
   "indent_type",
   "is_copy_of_lr_with_remark_attached",
   "lr_copy",
@@ -17,13 +17,15 @@
   "reason",
   "column_break_arsd",
   "status",
+  "issue_category",
+  "sub_issue_categories",
   "dispatch_date",
   "record_type",
   "transport_mode",
   "received",
   "head_office_remark",
-  "issue_category",
-  "sub_issue_categories",
+  "section_break_husq",
+  "items",
   "additional_details_section",
   "additional_details"
  ],
@@ -119,13 +121,6 @@
    "label": "Additional Details"
   },
   {
-   "default": "0",
-   "fieldname": "custom_is_installation",
-   "fieldtype": "Check",
-   "label": "Is Installation",
-   "read_only": 1
-  },
-  {
    "fieldname": "service_call",
    "fieldtype": "Link",
    "label": "Service Call",
@@ -153,11 +148,28 @@
    "fieldtype": "Attach",
    "label": "LR Copy",
    "mandatory_depends_on": "eval:(doc.indent_type=='Transit Damage') && (doc.is_copy_of_lr_with_remark_attached==1)"
+  },
+  {
+   "fieldname": "section_break_husq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Indent Item"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_installation",
+   "fieldtype": "Check",
+   "label": "Is Installation",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-02 13:07:38.609370",
+ "modified": "2025-03-02 16:20:59.650339",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Indent",

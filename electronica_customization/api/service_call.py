@@ -12,7 +12,10 @@ def create_indent(source_name, target_doc=None):
         {"Warranty Claim": {"doctype": "Indent", "field_map": {}}},
         target_doc,
     )
-    target_doc.installation = source_name
+    source_doc = frappe.get_doc("Warranty Claim", source_name)
+
+    target_doc.service_call = source_name
+    target_doc.is_installation = source_doc.custom_is_installation
     return target_doc
 
 

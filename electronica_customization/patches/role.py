@@ -4,16 +4,17 @@ import frappe
 def execute():
     add_roles()
 
+
 def add_roles():
     roles = [
         {
-            "role_name":"Factory User",
+            "role_name": "Factory User",
         },
         {
-            "role_name":"HO",
+            "role_name": "HO",
         },
         {
-            "role_name":"Branch Manager",
+            "role_name": "Branch Manager",
         },
     ]
 
@@ -39,6 +40,4 @@ def add_roles():
                     f"Added role: {role['role_name']} -> {role['role_name']}"
                 )
         except Exception as e:
-            frappe.logger("patch_exception").exception(
-                f"Error adding role: {role}"
-            )
+            frappe.logger("patch_exception").exception(f"Error adding role: {role}")

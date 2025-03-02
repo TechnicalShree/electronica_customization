@@ -23,6 +23,40 @@ function updateStatusOptions(frm) {
     }
 }
 
+function updateServiceCallFields(frm) {
+    if (!!frm.doc?.custom_is_installation) return
+
+    let warranty_amc_status = "Out of Warranty"; // Default status
+    const today = frappe.datetime.get_today();
+
+    // Check if within warranty period
+    if (frm.doc.custom_warranty_start_date && frm.doc.warranty_expiry_date) {
+        if (today >= frm.doc.custom_warranty_start_date && today <= frm.doc.warranty_expiry_date) {
+            warranty_amc_status = "Under Warranty";
+        }
+    }
+
+    // Check if within AMC period (overrides warranty if applicable)
+    if (warranty_amc_status != "Under Warranty" && frm.doc.custom_amc_start_date && frm.doc.amc_expiry_date) {
+        if (today >= frm.doc.custom_amc_start_date && today <= frm.doc.amc_expiry_date) {
+            warranty_amc_status = "Under AMC";
+        } else if (today > frm.doc.amc_expiry_date) {
+            warranty_amc_status = "Out of AMC";
+        }
+    }
+
+    // If neither warranty nor AMC is active, default to "Out of Warranty"
+    if (warranty_amc_status === "Out of Warranty" && frm.doc.amc_expiry_date && today > frm.doc.amc_expiry_date) {
+        warranty_amc_status = "Out of AMC";
+    }
+
+    frm.set_value("warranty_amc_status", warranty_amc_status);
+    frm.set_value("custom_warranty__amc_status", warranty_amc_status);
+
+    frm.refresh_field("warranty_amc_status");
+    frm.refresh_field("custom_warranty__amc_status");
+}
+
 // Helper function to update the complaint field based on custom_is_installation
 function handleInstallationComplaint(frm) {
     frm.set_value("complaint", !!frm.doc.custom_is_installation ? "Installation" : frm.doc?.complaint || null);
@@ -39,6 +73,16 @@ function handleInstallationComplaint(frm) {
 
 // Main event handlers for the Warranty Claim doctype
 frappe.ui.form.on("Warranty Claim", {
+    setup: function (frm) {
+        // Set field properties on setup
+        frm.fields_dict.serial_no.get_query = function (doc) {
+            return {
+                filters: [
+                    ['custom_customer_code', '=', frm.doc?.customer || ""]
+                ]
+            };
+        };
+    },
     validate: function (frm) {
         console.log("custom_checklist_attached", frm.doc.custom_checklist_attached);
         if (frm.doc.status === "Site Readiness") {
@@ -76,6 +120,7 @@ frappe.ui.form.on("Warranty Claim", {
         // Set field properties and update status options on refresh
         setCustomInstallationReadOnly(frm);
         handleInstallationComplaint(frm);
+        updateServiceCallFields(frm);
         updateStatusOptions(frm);
     },
 
@@ -83,5 +128,17 @@ frappe.ui.form.on("Warranty Claim", {
         // When custom_is_installation changes, update the complaint field and status options
         handleInstallationComplaint(frm);
         updateStatusOptions(frm);
-    }
+    },
+    custom_warranty_start_date: function (frm) {
+        updateServiceCallFields(frm);
+    },
+    warranty_expiry_date: function (frm) {
+        updateServiceCallFields(frm);
+    },
+    custom_amc_start_date: function (frm) {
+        updateServiceCallFields(frm);
+    },
+    amc_expiry_date: function (frm) {
+        updateServiceCallFields(frm);
+    },
 });
