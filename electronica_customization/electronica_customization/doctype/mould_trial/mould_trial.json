@@ -9,7 +9,7 @@
   "machine_model",
   "service_call",
   "column_break_cqgs",
-  "regionlocation",
+  "region",
   "serial_no",
   "section_break_vqzd",
   "screw_dia",
@@ -92,11 +92,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "regionlocation",
-   "fieldtype": "Data",
-   "label": "Region/Location"
-  },
-  {
    "fieldname": "machine_model",
    "fieldtype": "Link",
    "label": "Machine Model",
@@ -135,13 +130,13 @@
    "fieldname": "nos_air_ejection",
    "fieldtype": "Select",
    "label": "NOS Air Ejection",
-   "options": "\nMoving both\nFix\n1\n2\n3\n4"
+   "options": "\nMoving Both\nFix\n1\n2\n3\n4"
   },
   {
    "fieldname": "nos_of_core",
    "fieldtype": "Select",
    "label": "NOS of Core",
-   "options": "\nMoving both\nFix\n1\n2\n3\n4\n0"
+   "options": "\nMoving Both\nFix\n1\n2\n3\n4\n0"
   },
   {
    "fieldname": "injection_fill_time_sec",
@@ -453,11 +448,16 @@
    "fieldtype": "Link",
    "label": "Serial No",
    "options": "Serial No"
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Data",
+   "label": "Region"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-02 22:46:15.603891",
+ "modified": "2025-03-02 23:11:43.917217",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Mould Trial",
