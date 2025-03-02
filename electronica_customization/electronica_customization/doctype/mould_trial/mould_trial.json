@@ -100,7 +100,7 @@
    "fieldname": "machine_model",
    "fieldtype": "Link",
    "label": "Machine Model",
-   "options": "Product Family Master"
+   "options": "Item Model Master"
   },
   {
    "fieldname": "section_break_vqzd",
@@ -457,7 +457,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-27 21:43:23.618279",
+ "modified": "2025-03-02 22:46:15.603891",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Mould Trial",
