@@ -33,6 +33,7 @@
   {
    "fieldname": "status",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Status",
    "options": "\nOpen\nApproved By Branch Manager\nApproved By HO\nApproved By Factory\nRejected By Branch Manager\nRejected By HO\nRejected By Factory\nActivated\nDispatch\nCompleted"
   },
@@ -59,9 +60,12 @@
    "options": "\nMaterial Not Received\nMaterial Not Dispatch\nnone"
   },
   {
+   "depends_on": "eval:!doc.is_installation",
+   "fetch_from": "service_call.complaint",
    "fieldname": "issue_category",
    "fieldtype": "Link",
    "label": "Issue Category",
+   "mandatory_depends_on": "eval:!doc.is_installation",
    "options": "Issue Category",
    "reqd": 1
   },
@@ -93,9 +97,12 @@
    "label": "HEAD OFFICE REMARK"
   },
   {
+   "depends_on": "eval:!doc.is_installation",
+   "fetch_from": "service_call.custom_sub_category",
    "fieldname": "sub_issue_categories",
    "fieldtype": "Link",
    "label": "Sub Issue Categories",
+   "mandatory_depends_on": "eval:!doc.is_installation",
    "options": "Sub Issue Categories",
    "reqd": 1
   },
@@ -161,6 +168,7 @@
   },
   {
    "default": "0",
+   "fetch_from": "service_call.custom_is_installation",
    "fieldname": "is_installation",
    "fieldtype": "Check",
    "label": "Is Installation",
@@ -169,7 +177,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-02 16:20:59.650339",
+ "modified": "2025-03-08 11:47:09.027031",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Indent",

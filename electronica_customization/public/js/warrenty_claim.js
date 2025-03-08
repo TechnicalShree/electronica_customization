@@ -3,6 +3,8 @@ function setCustomInstallationReadOnly(frm) {
     // If the document is new (__islocal is true), allow editing; otherwise, make it read-only.
     const readOnly = frm.doc.__islocal ? 0 : 1;
     frm.set_df_property("custom_is_installation", "read_only", readOnly);
+    frm.set_value("custom_is_billed", 0);
+    frm.refresh_field("custom_is_billed");
 }
 
 // Helper function to update the status field options and ensure default is "New"
@@ -59,13 +61,27 @@ function updateServiceCallFields(frm) {
 
 // Helper function to update the complaint field based on custom_is_installation
 function handleInstallationComplaint(frm) {
-    frm.set_value("complaint", !!frm.doc.custom_is_installation ? "Installation" : frm.doc?.complaint || null);
+    frm.set_value("complaint", !!frm.doc.custom_is_installation ? "" : frm.doc?.complaint || null);
     frm.refresh_field("complaint");
+
+    frm.set_value("custom_issue_type", "");
+    frm.refresh_field("custom_issue_type");
 
     frm.fields_dict.complaint.get_query = function () {
         return {
             filters: [
-                ['issue_name', !!frm.doc.custom_is_installation ? '=' : '!=', "Installation"]
+                ['category', !!frm.doc.custom_is_installation ? '=' : '!=', "Installation"]
+            ]
+        };
+    };
+    handleSubIssueCategory(frm);
+}
+
+function handleSubIssueCategory(frm) {
+    frm.fields_dict.custom_issue_type.get_query = function () {
+        return {
+            filters: [
+                ['category', '=', frm.doc.complaint]
             ]
         };
     };
@@ -120,10 +136,15 @@ frappe.ui.form.on("Warranty Claim", {
         // Set field properties and update status options on refresh
         setCustomInstallationReadOnly(frm);
         handleInstallationComplaint(frm);
-        updateServiceCallFields(frm);
         updateStatusOptions(frm);
     },
+    complaint: function (frm) {
+        handleSubIssueCategory(frm);
+    },
 
+    serial_no: function (frm) {
+        updateServiceCallFields(frm);
+    },
     custom_is_installation: function (frm) {
         // When custom_is_installation changes, update the complaint field and status options
         handleInstallationComplaint(frm);
