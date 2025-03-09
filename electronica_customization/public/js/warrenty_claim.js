@@ -3,8 +3,6 @@ function setCustomInstallationReadOnly(frm) {
     // If the document is new (__islocal is true), allow editing; otherwise, make it read-only.
     const readOnly = frm.doc.__islocal ? 0 : 1;
     frm.set_df_property("custom_is_installation", "read_only", readOnly);
-    frm.set_value("custom_is_billed", 0);
-    frm.refresh_field("custom_is_billed");
 }
 
 // Helper function to update the status field options and ensure default is "New"
