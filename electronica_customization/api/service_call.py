@@ -16,6 +16,9 @@ def create_indent(source_name, target_doc=None):
 
     target_doc.service_call = source_name
     target_doc.is_installation = source_doc.custom_is_installation
+    target_doc.issue_category = source_doc.complaint
+    target_doc.sub_issue_categories = source_doc.custom_issue_type
+    target_doc.problem_observed = source_doc.custom_problem_observed
     return target_doc
 
 

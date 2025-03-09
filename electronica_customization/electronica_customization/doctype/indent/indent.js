@@ -2,26 +2,15 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Indent", {
-    refresh(frm) {
-        frm.fields_dict.service_call.get_query = function () {
-            return {
-                filters: [
-                    ['custom_is_installation', '=', 1]
-                ]
-            };
-        };
-    },
-    issue_category(frm) {
-        frm.fields_dict.sub_issue_categories.get_query = function (doc) {
-            return {
-                filters: [
-                    ['category', '=', frm.doc.issue_category]
-                ]
-            };
-        };
-        frm.set_value("sub_issue_categories", "");
-        frm.refresh_field("sub_issue_categories");
-    },
+    // refresh(frm) {
+    //     frm.fields_dict.service_call.get_query = function () {
+    //         return {
+    //             filters: [
+    //                 ['custom_is_installation', '=', 1]
+    //             ]
+    //         };
+    //     };
+    // },
 });
 
 // Function to calculate totals for an individual row

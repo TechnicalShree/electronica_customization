@@ -64,9 +64,6 @@ function handleInstallationComplaint(frm) {
     frm.set_value("complaint", !!frm.doc.custom_is_installation ? "" : frm.doc?.complaint || null);
     frm.refresh_field("complaint");
 
-    frm.set_value("custom_issue_type", "");
-    frm.refresh_field("custom_issue_type");
-
     frm.fields_dict.complaint.get_query = function () {
         return {
             filters: [
@@ -139,6 +136,9 @@ frappe.ui.form.on("Warranty Claim", {
         updateStatusOptions(frm);
     },
     complaint: function (frm) {
+        frm.set_value("custom_issue_type", "");
+        frm.refresh_field("custom_issue_type");
+
         handleSubIssueCategory(frm);
     },
 

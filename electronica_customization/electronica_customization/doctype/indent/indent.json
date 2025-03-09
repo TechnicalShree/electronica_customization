@@ -13,7 +13,7 @@
   "lr_copy",
   "sum_of_list_price",
   "sum_of_total_price",
-  "custom_problem_observed",
+  "problem_observed",
   "reason",
   "column_break_arsd",
   "status",
@@ -66,8 +66,7 @@
    "fieldtype": "Link",
    "label": "Issue Category",
    "mandatory_depends_on": "eval:!doc.is_installation",
-   "options": "Issue Category",
-   "reqd": 1
+   "options": "Issue Category"
   },
   {
    "fieldname": "column_break_arsd",
@@ -98,13 +97,12 @@
   },
   {
    "depends_on": "eval:!doc.is_installation",
-   "fetch_from": "service_call.custom_sub_category",
+   "fetch_from": "service_call.custom_issue_type",
    "fieldname": "sub_issue_categories",
    "fieldtype": "Link",
    "label": "Sub Issue Categories",
    "mandatory_depends_on": "eval:!doc.is_installation",
-   "options": "Sub Issue Categories",
-   "reqd": 1
+   "options": "Sub Issue Categories"
   },
   {
    "fieldname": "transport_mode",
@@ -132,13 +130,6 @@
    "fieldtype": "Link",
    "label": "Service Call",
    "options": "Warranty Claim",
-   "reqd": 1
-  },
-  {
-   "fieldname": "custom_problem_observed",
-   "fieldtype": "Small Text",
-   "in_list_view": 1,
-   "label": "Problem Observed",
    "reqd": 1
   },
   {
@@ -173,11 +164,18 @@
    "fieldtype": "Check",
    "label": "Is Installation",
    "read_only": 1
+  },
+  {
+   "fieldname": "problem_observed",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Problem Observed",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-08 11:47:09.027031",
+ "modified": "2025-03-09 12:02:27.661767",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Indent",
