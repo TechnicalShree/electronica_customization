@@ -18,7 +18,10 @@ def get_data(data):
                     "Customer Training",
                 ],
             },
-            {"label": _("Material Requests"), "items": ["Indent"]},
+            {
+                "label": _("Material Requests"),
+                "items": ["Indent", "Site Readiness Note"],
+            },
             {"label": _("Service Visits"), "items": ["Maintenance Visit"]},
         ],
     }
