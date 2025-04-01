@@ -14,20 +14,20 @@ fixtures = [
     {
         "doctype": "Microapp Form Widget",
         "or_filters": [
-            ["name", "=", "dsk62v3p17"],
-            ["name", "=", "8le3mqv47e"],
-            ["name", "=", "469f687une"],
-            ["name", "=", "83jnup6255"],
-            ["name", "=", "uus81ni2m0"],
-            ["name", "=", "e13qdqirl7"],
+            # ["name", "=", "dsk62v3p17"],
+            # ["name", "=", "8le3mqv47e"],
+            # ["name", "=", "469f687une"],
+            # ["name", "=", "83jnup6255"],
+            # ["name", "=", "uus81ni2m0"],
+            # ["name", "=", "e13qdqirl7"],
         ],
     },
     {
         "doctype": "Funnel",
         "or_filters": [
-            ["name", "=", "Installation Approval"],
-            ["name", "=", "Indent Approval"],
-            ["name", "=", "Quotation Approval"],
+            # ["name", "=", "Installation Approval"],
+            # ["name", "=", "Indent Approval"],
+            # ["name", "=", "Quotation Approval"],
         ],
     },
 ]
