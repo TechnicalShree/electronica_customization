@@ -143,9 +143,10 @@ doctype_js = {
 # -----------
 # Permissions evaluated in scripted ways
 
-# permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
-# }
+permission_query_conditions = {
+	"Warranty Claim": "electronica_customization.electronica_customization.overrides.warranty_claim.get_permission_query_conditions_for_warrenty_claim",
+    "Maintenance Visit": "electronica_customization.electronica_customization.overrides.maintenance_visit.get_permission_query_conditions_for_maintenance_visit",
+}
 #
 # has_permission = {
 # 	"Event": "frappe.desk.doctype.event.event.has_permission",

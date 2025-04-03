@@ -39,7 +39,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-03 19:53:48.148518",
+ "modified": "2025-04-03 10:47:51.001680",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Item Model Master",
@@ -57,6 +57,12 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "export": 1,
+   "read": 1,
+   "role": "All",
+   "select": 1
   }
  ],
  "sort_field": "modified",

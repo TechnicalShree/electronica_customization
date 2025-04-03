@@ -20,7 +20,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-14 00:30:57.421260",
+ "modified": "2025-04-02 23:45:40.081139",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Product Family Master",
@@ -38,6 +38,11 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "export": 1,
+   "read": 1,
+   "role": "All"
   }
  ],
  "sort_field": "modified",

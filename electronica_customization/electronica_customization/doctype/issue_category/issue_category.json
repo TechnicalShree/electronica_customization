@@ -20,7 +20,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-19 14:50:54.033420",
+ "modified": "2025-04-03 15:31:34.293859",
  "modified_by": "Administrator",
  "module": "Electronica Customization",
  "name": "Issue Category",
@@ -38,6 +38,11 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "export": 1,
+   "read": 1,
+   "role": "All"
   }
  ],
  "sort_field": "modified",

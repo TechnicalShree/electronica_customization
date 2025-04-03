@@ -30,3 +30,36 @@ class CustomWarrantyClaim(WarrantyClaim):
 
         next_number = last_number + 1
         self.name = f"{prefix}{str(next_number).zfill(5)}"  # Keep 5-digit padding
+
+
+def get_permission_query_conditions_for_warrenty_claim(user):
+    user = user or frappe.session.user
+
+    user_roles = frappe.get_roles(user)
+
+    # Allow full access for Administrator or System Manager
+    if user == "Administrator" or "System Manager" in user_roles:
+        return ""
+    
+    user_branch = frappe.get_value("Employee", {"user_id": user}, "branch")
+
+    if "Branch Engineer" in user_roles:
+        return f"""
+        (
+            `tabWarranty Claim`.`owner` = '{user}'
+            OR
+            `tabWarranty Claim`.`name` IN (
+                SELECT `custom_parent_service_call`
+                FROM `tabMaintenance Visit`
+                WHERE `custom_assigned_engineer` = '{user}'
+            )
+        )
+        """
+
+    return f"""
+    (
+        `tabWarranty Claim`.`owner` = '{user}'
+        OR
+        `tabWarranty Claim`.`custom_branch` = '{user_branch}'
+    )
+    """

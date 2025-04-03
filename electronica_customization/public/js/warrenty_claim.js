@@ -84,8 +84,7 @@ function handleSubIssueCategory(frm) {
 
 // Main event handlers for the Warranty Claim doctype
 frappe.ui.form.on("Warranty Claim", {
-    setup: function (frm) {
-        // Set field properties on setup
+    setup: async function (frm) {
         frm.fields_dict.serial_no.get_query = function (doc) {
             return {
                 filters: [
@@ -93,6 +92,29 @@ frappe.ui.form.on("Warranty Claim", {
                 ]
             };
         };
+
+
+        // Set field properties on setup
+        await frappe.call({
+            method: 'frappe.client.get_value',
+            args: {
+                doctype: 'Employee',
+                filters: { 'user_id': frappe.session.user },
+                fieldname: ['branch']
+            },
+            callback: function (response) {
+                if (!!response.message?.branch) {
+                    frm.fields_dict.customer.get_query = function (doc) {
+                        return {
+                            filters: [
+                                ['custom_branch_name', '=', response.message.branch || ""]
+                            ]
+                        };
+                    };
+
+                }
+            }
+        });
     },
     validate: function (frm) {
         console.log("custom_checklist_attached", frm.doc.custom_checklist_attached);
@@ -108,30 +130,44 @@ frappe.ui.form.on("Warranty Claim", {
         }
     },
     refresh: function (frm) {
-        // Add custom button for creating indent
-        frm.add_custom_button(__("Indent"), function () {
-            frappe.model.open_mapped_doc({
-                method: "electronica_customization.api.service_call.create_indent",
-                frm: frm,
-            });
-        }, 'Create');
-        frm.add_custom_button(__("Quotation"), function () {
-            frappe.model.open_mapped_doc({
-                method: "electronica_customization.api.service_call.create_quotation",
-                frm: frm,
-            });
-        }, 'Create');
-        frm.add_custom_button(__("Problem Observed"), function () {
-            frappe.model.open_mapped_doc({
-                method: "electronica_customization.api.service_call.create_problem_observed",
-                frm: frm,
-            });
-        }, 'Create');
+        frm.remove_custom_button(__("Create Engineer Visit"));
+        if (!frm.doc.__islocal) {
+            if (frappe.user.has_role("Branch Manager")) {
+                frm.add_custom_button(__("Create Engineer Visit"), () => {
+                    frappe.model.open_mapped_doc({
+                        method:
+                            "support_management.support_management.doctype.service_call.service_call.create_engineer_visit",
+                        frm: frm,
+                    });
+                });
+            }
+
+            // Add custom button for creating indent
+            frm.add_custom_button(__("Indent"), function () {
+                frappe.model.open_mapped_doc({
+                    method: "electronica_customization.api.service_call.create_indent",
+                    frm: frm,
+                });
+            }, 'Create');
+            frm.add_custom_button(__("Quotation"), function () {
+                frappe.model.open_mapped_doc({
+                    method: "electronica_customization.api.service_call.create_quotation",
+                    frm: frm,
+                });
+            }, 'Create');
+            frm.add_custom_button(__("Problem Observed"), function () {
+                frappe.model.open_mapped_doc({
+                    method: "electronica_customization.api.service_call.create_problem_observed",
+                    frm: frm,
+                });
+            }, 'Create');
+        }
 
         // Set field properties and update status options on refresh
         setCustomInstallationReadOnly(frm);
         handleInstallationComplaint(frm);
         updateStatusOptions(frm);
+
     },
     complaint: function (frm) {
         frm.set_value("custom_issue_type", "");
