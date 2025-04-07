@@ -40,8 +40,6 @@ def get_permission_query_conditions_for_warrenty_claim(user):
     # Allow full access for Administrator or System Manager
     if user == "Administrator" or "System Manager" in user_roles:
         return ""
-    
-    user_branch = frappe.get_value("Employee", {"user_id": user}, "branch")
 
     if "Branch Engineer" in user_roles:
         return f"""
@@ -55,6 +53,8 @@ def get_permission_query_conditions_for_warrenty_claim(user):
             )
         )
         """
+
+    user_branch = frappe.get_value("Employee", {"user_id": user}, "branch")
 
     return f"""
     (

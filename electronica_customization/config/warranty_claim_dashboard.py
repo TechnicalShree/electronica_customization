@@ -20,7 +20,7 @@ def get_data(data):
             },
             {
                 "label": _("Material Requests"),
-                "items": ["Indent", "Site Readiness Note"],
+                "items": ["Indent", "Site Readiness Note", "Quotation"],
             },
             {"label": _("Service Visits"), "items": ["Maintenance Visit"]},
         ],

@@ -69,6 +69,7 @@ doctype_js = {
     "Item": "public/js/item.js",
     "Warranty Claim": "public/js/warrenty_claim.js",
     "Maintenance Visit": "public/js/maintenance_visit.js",
+    "Serial No": "public/js/serial_no.js",
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -146,6 +147,7 @@ doctype_js = {
 permission_query_conditions = {
 	"Warranty Claim": "electronica_customization.electronica_customization.overrides.warranty_claim.get_permission_query_conditions_for_warrenty_claim",
     "Maintenance Visit": "electronica_customization.electronica_customization.overrides.maintenance_visit.get_permission_query_conditions_for_maintenance_visit",
+    "Customer": "electronica_customization.electronica_customization.overrides.customer.get_permission_query_conditions_for_customer",
 }
 #
 # has_permission = {

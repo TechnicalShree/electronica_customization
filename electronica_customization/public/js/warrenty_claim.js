@@ -92,29 +92,6 @@ frappe.ui.form.on("Warranty Claim", {
                 ]
             };
         };
-
-
-        // Set field properties on setup
-        await frappe.call({
-            method: 'frappe.client.get_value',
-            args: {
-                doctype: 'Employee',
-                filters: { 'user_id': frappe.session.user },
-                fieldname: ['branch']
-            },
-            callback: function (response) {
-                if (!!response.message?.branch) {
-                    frm.fields_dict.customer.get_query = function (doc) {
-                        return {
-                            filters: [
-                                ['custom_branch_name', '=', response.message.branch || ""]
-                            ]
-                        };
-                    };
-
-                }
-            }
-        });
     },
     validate: function (frm) {
         console.log("custom_checklist_attached", frm.doc.custom_checklist_attached);
@@ -168,6 +145,12 @@ frappe.ui.form.on("Warranty Claim", {
         handleInstallationComplaint(frm);
         updateStatusOptions(frm);
 
+    },
+    customer: function (frm) {
+        // When customer changes, update the serial_no field
+        frm.set_value("serial_no", "");
+        frm.refresh_field("serial_no");
+        updateServiceCallFields(frm);
     },
     complaint: function (frm) {
         frm.set_value("custom_issue_type", "");
