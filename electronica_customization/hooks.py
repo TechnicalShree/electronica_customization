@@ -70,6 +70,7 @@ doctype_js = {
     "Warranty Claim": "public/js/warrenty_claim.js",
     "Maintenance Visit": "public/js/maintenance_visit.js",
     "Serial No": "public/js/serial_no.js",
+    "Quotation": "public/js/quotation.js",
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -212,7 +213,8 @@ override_doctype_class = {
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 override_doctype_dashboards = {
-    "Warranty Claim": "electronica_customization.config.warranty_claim_dashboard.get_data"
+    "Warranty Claim": "electronica_customization.config.warranty_claim_dashboard.get_data",
+    "Quotation": "electronica_customization.config.quotation_dashboard.get_data"
 }
 
 # exempt linked doctypes from being automatically cancelled
