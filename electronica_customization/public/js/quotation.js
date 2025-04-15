@@ -70,4 +70,12 @@ frappe.ui.form.on("Quotation Item", {
             setItemDetails(frm, row);
         }, 300)
     },
+    rate: async function (frm, cdt, cdn) {
+        const row = frappe.get_doc(cdt, cdn);
+        const unit_price = await getItemUnitPrice(frm, row);
+        if (row.rate < unit_price) {
+            frappe.msgprint(__("The rate for item {0} cannot be less than the unit price ({1}).", [row.item_code, unit_price]));
+            frappe.model.set_value(cdt, cdn, "rate", unit_price);
+        }
+    }
 });
