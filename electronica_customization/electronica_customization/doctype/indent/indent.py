@@ -14,5 +14,7 @@ class Indent(Document):
         user = frappe.session.user
         self.status = "Open"
         self.created_by = user
-        self.created_by_employee = frappe.get_value("Employee", {"user_id": user}, "name")
+        self.created_by_employee = frappe.get_value(
+            "Employee", {"user_id": user}, "name"
+        )
         self.save()

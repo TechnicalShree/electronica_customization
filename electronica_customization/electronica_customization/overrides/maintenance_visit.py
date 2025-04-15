@@ -15,7 +15,7 @@ def get_permission_query_conditions_for_maintenance_visit(user):
     return f"""
     (
         `tabMaintenance Visit`.`owner` = '{user}'
-        OR 
+        OR
         `tabMaintenance Visit`.`custom_assigned_engineer` = '{user}'
     )
     """

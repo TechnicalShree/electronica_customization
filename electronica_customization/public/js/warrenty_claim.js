@@ -82,6 +82,33 @@ function handleSubIssueCategory(frm) {
     };
 }
 
+function updateBillingDetails(frm) {
+    frappe.call({
+        method: "electronica_customization.api.engineer_visit.get_primary_billing_details",
+        args: {
+            customer: frm.doc.customer
+        },
+        callback: function (response) {
+            if (!!response?.message?.state) {
+                frm.set_value("custom_billing_state", response.message.state);
+            }
+            else {
+                frm.set_value("custom_billing_state", "");
+            }
+
+            if (!!response?.message?.city) {
+                frm.set_value("custom_billing_city", response.message.city);
+            }
+            else {
+                frm.set_value("custom_billing_city", "");
+            }
+
+            frm.refresh_field("custom_billing_city");
+            frm.refresh_field("custom_billing_state");
+        }
+    })
+}
+
 // Main event handlers for the Warranty Claim doctype
 frappe.ui.form.on("Warranty Claim", {
     setup: async function (frm) {
@@ -119,13 +146,7 @@ frappe.ui.form.on("Warranty Claim", {
                 });
             }
 
-            // Add custom button for creating indent
-            frm.add_custom_button(__("Indent"), function () {
-                frappe.model.open_mapped_doc({
-                    method: "electronica_customization.api.service_call.create_indent",
-                    frm: frm,
-                });
-            }, 'Create');
+            // Add custom buttons
             frm.add_custom_button(__("Quotation"), function () {
                 frappe.model.open_mapped_doc({
                     method: "electronica_customization.api.service_call.create_quotation",
@@ -147,10 +168,14 @@ frappe.ui.form.on("Warranty Claim", {
 
     },
     customer: function (frm) {
-        // When customer changes, update the serial_no field
         frm.set_value("serial_no", "");
+        frm.set_value("complaint", "");
+
         frm.refresh_field("serial_no");
+        frm.refresh_field("complaint");
+
         updateServiceCallFields(frm);
+        updateBillingDetails(frm);
     },
     complaint: function (frm) {
         frm.set_value("custom_issue_type", "");
@@ -163,7 +188,6 @@ frappe.ui.form.on("Warranty Claim", {
         updateServiceCallFields(frm);
     },
     custom_is_installation: function (frm) {
-        // When custom_is_installation changes, update the complaint field and status options
         handleInstallationComplaint(frm);
         updateStatusOptions(frm);
     },

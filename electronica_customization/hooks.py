@@ -146,7 +146,7 @@ doctype_js = {
 # Permissions evaluated in scripted ways
 
 permission_query_conditions = {
-	"Warranty Claim": "electronica_customization.electronica_customization.overrides.warranty_claim.get_permission_query_conditions_for_warrenty_claim",
+    "Warranty Claim": "electronica_customization.electronica_customization.overrides.warranty_claim.get_permission_query_conditions_for_warrenty_claim",
     "Maintenance Visit": "electronica_customization.electronica_customization.overrides.maintenance_visit.get_permission_query_conditions_for_maintenance_visit",
     "Customer": "electronica_customization.electronica_customization.overrides.customer.get_permission_query_conditions_for_customer",
 }
@@ -214,7 +214,7 @@ override_doctype_class = {
 # along with any modifications made in other Frappe apps
 override_doctype_dashboards = {
     "Warranty Claim": "electronica_customization.config.warranty_claim_dashboard.get_data",
-    "Quotation": "electronica_customization.config.quotation_dashboard.get_data"
+    "Quotation": "electronica_customization.config.quotation_dashboard.get_data",
 }
 
 # exempt linked doctypes from being automatically cancelled
