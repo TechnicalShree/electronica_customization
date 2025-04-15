@@ -1,3 +1,30 @@
+async function getItemUnitPrice(frm, row) {
+    if (!row?.item_code) return;
+
+    const data = await frappe.call({
+        method: "frappe.client.get_value",
+        args: {
+            doctype: "Item",
+            filters: {
+                name: row.item_code
+            },
+            fieldname: ["custom_unit_price"]
+        }
+    })
+
+    return data?.message?.custom_unit_price || 0;
+}
+
+async function setItemDetails(frm, row) {
+    if (!row) return;
+
+    const item_unit_price = await getItemUnitPrice(frm, row);
+    frappe.model.set_value(row.doctype, row.name, "price_list_rate", item_unit_price);
+    frappe.model.set_value(row.doctype, row.name, "rate", item_unit_price);
+
+    frm.refresh_field("items");
+}
+
 frappe.ui.form.on('Quotation', {
     refresh: function (frm) {
         if (!frm.doc.__islocal && !!frm.doc?.custom_is_create_so) {
@@ -27,4 +54,20 @@ frappe.ui.form.on('Quotation', {
             }
         }
     }
+});
+
+
+frappe.ui.form.on("Quotation Item", {
+    item_code: function (frm, cdt, cdn) {
+        setTimeout(() => {
+            const row = locals[cdt][cdn] || null;
+            setItemDetails(frm, row);
+        }, 300)
+    },
+    qty: function (frm, cdt, cdn) {
+        setTimeout(() => {
+            const row = locals[cdt][cdn] || null;
+            setItemDetails(frm, row);
+        }, 300)
+    },
 });
