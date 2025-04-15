@@ -3,11 +3,13 @@
 
 frappe.ui.form.on("Problem Observed", {
     refresh(frm) {
-        frm.add_custom_button(__("Indent"), function () {
-            frappe.model.open_mapped_doc({
-                method: "electronica_customization.api.service_call.create_indent",
-                frm: frm,
+        if (!frm.doc.__islocal) {
+            frm.add_custom_button(__("Create Indent"), function () {
+                frappe.model.open_mapped_doc({
+                    method: "electronica_customization.api.problem_observed.create_indent",
+                    frm: frm,
+                });
             });
-        }, 'Create');
+        }
     },
 });

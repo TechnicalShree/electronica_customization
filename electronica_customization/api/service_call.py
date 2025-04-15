@@ -3,25 +3,6 @@ from frappe.model.mapper import get_mapped_doc
 from frappe.utils import today
 
 
-# electronica_customization.api.service_call.create_indent
-@frappe.whitelist()
-def create_indent(source_name, target_doc=None):
-    target_doc = get_mapped_doc(
-        "Warranty Claim",
-        source_name,
-        {"Warranty Claim": {"doctype": "Indent", "field_map": {}}},
-        target_doc,
-    )
-    source_doc = frappe.get_doc("Warranty Claim", source_name)
-
-    target_doc.service_call = source_name
-    target_doc.is_installation = source_doc.custom_is_installation
-    target_doc.issue_category = source_doc.complaint
-    target_doc.sub_issue_categories = source_doc.custom_issue_type
-    target_doc.problem_observed = source_doc.custom_problem_observed
-    return target_doc
-
-
 # electronica_customization.api.service_call.create_quotation
 @frappe.whitelist()
 def create_quotation(source_name, target_doc=None):
@@ -51,6 +32,6 @@ def create_problem_observed(source_name, target_doc=None):
 
     target_doc.service_call = source_name
     target_doc.serial_number = source_doc.serial_no
-    target_doc.machine_model = source_doc.custom_mc_model
+    target_doc.machine_model = source_doc.custom_machine_model
     target_doc.date = today()
     return target_doc
