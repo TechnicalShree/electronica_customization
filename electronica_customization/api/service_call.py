@@ -35,3 +35,16 @@ def create_problem_observed(source_name, target_doc=None):
     target_doc.machine_model = source_doc.custom_machine_model
     target_doc.date = today()
     return target_doc
+
+
+# electronica_customization.api.service_call.is_installation_done_already
+@frappe.whitelist()
+def is_installation_done_already(serial_no):
+    return (
+        True
+        if frappe.db.exists(
+            "Warranty Claim",
+            {"serial_no": serial_no, "status": "Installation Completed"},
+        )
+        else False
+    )

@@ -57,6 +57,27 @@ function updateServiceCallFields(frm) {
     frm.refresh_field("custom_warranty__amc_status");
 }
 
+function updateIsInstallation(frm) {
+    if (!frm.doc?.serial_no) return
+
+    frappe.call({
+        method: "electronica_customization.api.service_call.is_installation_done_already",
+        args: {
+            serial_no: frm.doc.serial_no
+        },
+        callback: function (response) {
+            if (response.message) {
+                frm.set_value("custom_is_installation", false);
+                frm.set_df_property("custom_is_installation", "read_only", 1);
+                frm.refresh_field("custom_is_installation");
+            } else {
+                frm.set_df_property("custom_is_installation", "read_only", 0);
+                frm.refresh_field("custom_is_installation");
+            }
+        }
+    })
+}
+
 // Helper function to update the complaint field based on custom_is_installation
 function handleInstallationComplaint(frm) {
     frm.set_value("complaint", !!frm.doc.custom_is_installation ? "" : frm.doc?.complaint || null);
@@ -186,6 +207,7 @@ frappe.ui.form.on("Warranty Claim", {
 
     serial_no: function (frm) {
         updateServiceCallFields(frm);
+        updateIsInstallation(frm);
     },
     custom_is_installation: function (frm) {
         handleInstallationComplaint(frm);

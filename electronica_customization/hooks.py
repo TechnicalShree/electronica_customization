@@ -71,6 +71,7 @@ doctype_js = {
     "Maintenance Visit": "public/js/maintenance_visit.js",
     "Serial No": "public/js/serial_no.js",
     "Quotation": "public/js/quotation.js",
+    "Installation Note": "public/js/installation_note.js",
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
