@@ -46,20 +46,40 @@ def get_permission_query_conditions_for_warrenty_claim(user):
         (
             `tabWarranty Claim`.`owner` = '{user}'
             OR
-            `tabWarranty Claim`.`name` IN (
-                SELECT `custom_parent_service_call`
-                FROM `tabMaintenance Visit`
-                WHERE `custom_assigned_engineer` = '{user}'
+            EXISTS (
+                SELECT 1
+                FROM `tabMaintenance Visit` mv
+                WHERE mv.`custom_parent_service_call` = `tabWarranty Claim`.`name`
+                AND mv.`custom_assigned_engineer` = '{user}'
+            )
+        )
+        """
+
+    user_region = frappe.get_value("Employee", {"user_id": user}, "custom_region")
+    if "Reginal Head" in user_roles:
+        return f"""
+        (
+            `tabWarranty Claim`.`owner` = '{user}'
+            OR
+            EXISTS (
+                SELECT 1
+                FROM `tabMaintenance Visit` mv
+                JOIN `tabEmployee` emp ON mv.`custom_assigned_engineer` = emp.`user_id`
+                JOIN `tabBranch` b ON emp.`branch` = b.`branch`
+                WHERE mv.`custom_parent_service_call` = `tabWarranty Claim`.`name`
+                AND b.`custom_region` = '{user_region}'
             )
         )
         """
 
     user_branch = frappe.get_value("Employee", {"user_id": user}, "branch")
+    if user_branch:
+        return f"""
+        (
+            `tabWarranty Claim`.`owner` = '{user}'
+            OR
+            `tabWarranty Claim`.`custom_branch` = '{user_branch}'
+        )
+        """
 
-    return f"""
-    (
-        `tabWarranty Claim`.`owner` = '{user}'
-        OR
-        `tabWarranty Claim`.`custom_branch` = '{user_branch}'
-    )
-    """
+    return "0"

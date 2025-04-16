@@ -14,7 +14,7 @@ def add_roles():
             "role_name": "HO",
         },
         {
-            "role_name": "Branch Manager",
+            "role_name": "Branch Head",
         },
     ]
 

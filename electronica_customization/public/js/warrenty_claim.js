@@ -136,7 +136,7 @@ frappe.ui.form.on("Warranty Claim", {
     refresh: function (frm) {
         frm.remove_custom_button(__("Create Engineer Visit"));
         if (!frm.doc.__islocal) {
-            if (frappe.user.has_role("Branch Manager")) {
+            if (frappe.user.has_role("Branch Head")) {
                 frm.add_custom_button(__("Create Engineer Visit"), () => {
                     frappe.model.open_mapped_doc({
                         method:
