@@ -19,9 +19,14 @@ frappe.ui.form.on("Item", {
     },
     custom_product_family: (frm) => {
         handleProductFamilyUpdate(frm);
+        update_name(frm);
     },
     custom_series: (frm) => {
         handleSeriesUpdate(frm);
+        update_name(frm);
+    },
+    custom_model: (frm) => {
+        update_name(frm);
     },
     custom_list_price: (frm) => {
         const custom_list_price = frm.doc.custom_list_price ?? 0;
@@ -30,6 +35,25 @@ frappe.ui.form.on("Item", {
         frm.set_value("custom_unit_price", custom_list_price.toFixed(2) * 1.15);
     }
 });
+
+function update_name(frm) {
+    const { custom_product_family, custom_series, custom_model } = frm.doc;
+    if (custom_product_family && custom_series && custom_model) {
+        frappe.call({
+            method: "electronica_customization.api.item.get_next_item_name",
+            args: { custom_product_family, custom_series, custom_model },
+            callback: (r) => {
+                if (!r.exc) {
+                    // set the autoname preview (or override the actual name on Save)
+                    frm.set_value("item_code", r.message);
+
+                    frm.refresh_field("item_code");
+                }
+            },
+        });
+    }
+}
+
 
 
 function handleProductFamilyUpdate(frm) {
