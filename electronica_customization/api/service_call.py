@@ -1,3 +1,4 @@
+from electronica_customization.api.engineer_visit import get_primary_address
 import frappe
 from frappe.model.mapper import get_mapped_doc
 from frappe.utils import today
@@ -34,6 +35,50 @@ def create_problem_observed(source_name, target_doc=None):
     target_doc.serial_number = source_doc.serial_no
     target_doc.machine_model = source_doc.custom_machine_model
     target_doc.date = today()
+    return target_doc
+
+
+# electronica_customization.api.service_call.create_repaire_slip
+@frappe.whitelist()
+def create_repaire_slip(source_name, target_doc=None):
+    target_doc = get_mapped_doc(
+        "Warranty Claim",
+        source_name,
+        {"Warranty Claim": {"doctype": "Repairing Slip", "field_map": {}}},
+        target_doc,
+    )
+
+    source_doc = frappe.get_doc("Warranty Claim", source_name)
+    customer_address_details = get_primary_address(source_doc.customer)
+
+    target_doc.is_installation = source_doc.get("custom_is_installation")
+    target_doc.category = "Warrenty" if target_doc.is_installation else "Installation"
+
+    target_doc.customer_billing_address = customer_address_details.get(
+        "primary_billing_address"
+    )
+    target_doc.customer_shipping_address = customer_address_details.get(
+        "primary_shipping_address"
+    )
+
+    target_doc.billing_address = frappe.get_value(
+        "Address", target_doc.customer_billing_address, "address_line1"
+    )
+    target_doc.shipping_address = frappe.get_value(
+        "Address", target_doc.customer_shipping_address, "address_line1"
+    )
+    target_doc.customer_contact = frappe.get_value(
+        "Customer", target_doc.customer, "customer_primary_contact"
+    )
+    target_doc.mobile_no = frappe.get_value(
+        "Contact", target_doc.customer_contact, "mobile_no"
+    )
+    target_doc.email = frappe.get_value(
+        "Contact", target_doc.customer_contact, "email_id"
+    )
+
+    target_doc.date_of_visit = today()
+
     return target_doc
 
 

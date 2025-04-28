@@ -1,0 +1,184 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-04-28 09:25:11.839836",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "service_call",
+  "column_break_hxaj",
+  "is_installation",
+  "category",
+  "section_break_uybk",
+  "faulty_part_details",
+  "the_material_is_packed_properly_to_avoid_transit_damage",
+  "the_material_is_dispatched_with_proper_documents_dc",
+  "ensure_to_send_the_dispatch_details_to_factory",
+  "column_break_cmcy",
+  "date_of_visit",
+  "fault_diagnosed_by",
+  "customer_contact",
+  "mobile_no",
+  "email",
+  "address_details_section",
+  "customer_billing_address",
+  "billing_address",
+  "column_break_zrit",
+  "customer_shipping_address",
+  "shipping_address"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "service_call",
+   "fieldtype": "Link",
+   "label": "Service Call",
+   "options": "Warranty Claim"
+  },
+  {
+   "fieldname": "customer_billing_address",
+   "fieldtype": "Link",
+   "label": "Customer Billing Address",
+   "options": "Address"
+  },
+  {
+   "fetch_from": "customer_billing_address.address_line1",
+   "fieldname": "billing_address",
+   "fieldtype": "Read Only",
+   "label": "Billing Address"
+  },
+  {
+   "fieldname": "customer_shipping_address",
+   "fieldtype": "Link",
+   "label": "Customer Shipping Address",
+   "options": "Address"
+  },
+  {
+   "fetch_from": "customer_shipping_address.address_line1",
+   "fieldname": "shipping_address",
+   "fieldtype": "Read Only",
+   "label": "Shipping Address"
+  },
+  {
+   "fieldname": "address_details_section",
+   "fieldtype": "Section Break",
+   "label": "Address Details"
+  },
+  {
+   "fieldname": "column_break_zrit",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hxaj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_installation",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Is Installation",
+   "read_only": 1
+  },
+  {
+   "default": "Warrenty",
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "Warrenty\nInstallation"
+  },
+  {
+   "fieldname": "section_break_uybk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "faulty_part_details",
+   "fieldtype": "Small Text",
+   "label": "Faulty part details"
+  },
+  {
+   "default": "0",
+   "fieldname": "the_material_is_packed_properly_to_avoid_transit_damage",
+   "fieldtype": "Check",
+   "label": "The material is packed properly to avoid transit damage"
+  },
+  {
+   "default": "0",
+   "fieldname": "the_material_is_dispatched_with_proper_documents_dc",
+   "fieldtype": "Check",
+   "label": "The material is dispatched with proper documents (D.C.)"
+  },
+  {
+   "default": "0",
+   "fieldname": "ensure_to_send_the_dispatch_details_to_factory",
+   "fieldtype": "Check",
+   "label": "Ensure to send the dispatch details to factory"
+  },
+  {
+   "fieldname": "column_break_cmcy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fault_diagnosed_by",
+   "fieldtype": "Link",
+   "label": "Fault diagnosed by",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "date_of_visit",
+   "fieldtype": "Date",
+   "label": "Date Of Visit"
+  },
+  {
+   "fieldname": "customer_contact",
+   "fieldtype": "Link",
+   "label": "Customer Contact",
+   "options": "Contact"
+  },
+  {
+   "fetch_from": "customer_contact.mobile_no",
+   "fieldname": "mobile_no",
+   "fieldtype": "Read Only",
+   "label": "Mobile No"
+  },
+  {
+   "fetch_from": "customer_contact.email_id",
+   "fieldname": "email",
+   "fieldtype": "Read Only",
+   "label": "Email"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-04-28 10:06:45.173250",
+ "modified_by": "Administrator",
+ "module": "Electronica Customization",
+ "name": "Repairing Slip",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

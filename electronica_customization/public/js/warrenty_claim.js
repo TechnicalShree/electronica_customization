@@ -174,6 +174,12 @@ frappe.ui.form.on("Warranty Claim", {
                     frm: frm,
                 });
             }, 'Create');
+            frm.add_custom_button(__("Repaire Slip"), function () {
+                frappe.model.open_mapped_doc({
+                    method: "electronica_customization.api.service_call.create_repaire_slip",
+                    frm: frm,
+                });
+            }, 'Create');
             frm.add_custom_button(__("Problem Observed"), function () {
                 frappe.model.open_mapped_doc({
                     method: "electronica_customization.api.service_call.create_problem_observed",
